@@ -1,2 +1,2 @@
-yrm2015
+Young Researchers in Mathematics 2015
 =======
