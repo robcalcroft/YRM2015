@@ -4,7 +4,6 @@ The homepage for the 2015 Young Researchers in Mathematics conference held at Ox
 
 ---
 ###Installation
-=======
 1. Clone the repo
 `git clone https://github.com/robcalcroft/YRM2015.git`
 2. Make sure you have Ruby and Ruby Gems installed
