@@ -6,10 +6,14 @@ module.exports = function(grunt) {
     
     watch: {
       files: ['src/sass/*.scss', 'src/js/*.js/', 'src/**/*.html', 'src/css/*.css'],
-      tasks: ['default'],
+      tasks: ['debug'],
       options: {
         nospawn: true
       }
+    },
+    // Cleans the build directory
+    clean: {
+      src: ['build/']
     },
     // Concat
     concat: {
@@ -71,6 +75,12 @@ module.exports = function(grunt) {
         dest: 'build/',
         cwd: 'src/'
       },
+      js_debug: {
+        expand: true, 
+        src: ['js/<%= pkg.name %>-all.js'], 
+        dest: 'build/',
+        cwd: 'src/'
+      },
       html: {
         expand: true, 
         src: ['**/*.html', '!header.html', '!footer.html'], 
@@ -78,28 +88,40 @@ module.exports = function(grunt) {
         cwd: 'src/',
         options: {
           process: function(content) {
-            var res = content
-                        .replace('{{header}}', grunt.file.read('src/header.html'))
-                        .replace('{{footer}}', grunt.file.read('src/footer.html'))
-            if(res.indexOf('**DEBUG**') < 0) {
-                return res.replace('YRM2015-all.js', 'YRM2015-all.min.js')
-            }
-            return res;
+            return content
+                      .replace('{{header}}', grunt.file.read('src/header.html'))
+                      .replace('{{footer}}', grunt.file.read('src/footer.html'))
+                      .replace('YRM2015-all.js', 'YRM2015-all.min.js')
+          }
+        }
+      },
+      html_debug: {
+        expand: true, 
+        src: ['**/*.html', '!header.html', '!footer.html'], 
+        dest: 'build/',
+        cwd: 'src/',
+        options: {
+          process: function(content) {
+            return content
+                      .replace('{{header}}', grunt.file.read('src/header.html'))
+                      .replace('{{footer}}', grunt.file.read('src/footer.html'))
           }
         }
       }
     },
   });
 
-  // Load the plugins task.
+  // Load the plugins.
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  // Default task(s).
-  grunt.registerTask('default', ['concat', 'uglify', 'compass', 'cssmin', 'copy']);
+  // Tasks
+  grunt.registerTask('build', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html']);
+  grunt.registerTask('debug', ['clean', 'concat', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js_debug', 'copy:html_debug']);
 
 };
