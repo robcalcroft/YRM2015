@@ -1,18 +1,27 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "compass/typography";
 
 // * Vars
 
 // ** Colours
 $main-colour: rgb(0,33,71);
 $main-colour-light: lighten($main-colour, 5%);
+$text-contrast-colour: white;
 $text-main-colour: #7f8c8d;
 $text-main-colour-light: #95a5a6;
 $text-title-colour: darken($text-main-colour-light, 30%);
 $text-blue-colour: $main-colour-light;
 $background-colour: #ecf0f1;
 
-/* Font */
+// ** Sizes
+$text-size-small  : 11pt;
+$text-size-default: 15pt;
+$text-size-large  : 25pt;
+
+/***************************
+	Fonts
+***************************/
 
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
 
@@ -23,7 +32,9 @@ textarea {
 	font-family: 'Lato', sans-serif;
 }
 
-/* Hacks */
+/***************************
+	Hacks
+***************************/
 
 * {
 	@include box-sizing(border-box);
@@ -32,7 +43,9 @@ textarea {
 	}
 }
 
-/* Common */
+/***************************
+	Common CSS
+***************************/
 
 h1 {
 	color: $text-title-colour;
@@ -50,22 +63,27 @@ h3 {
 	font-size: 20pt;
 }
 
-button {
+/* Buttons */
+
+@mixin button($color, $fontSize: $text-size-small) {
 	@include transition(.3s background-color);
 	@include border-radius(5px);
 	border: 0;
 	padding: 10px 15px;
-	font-size: 11pt;
+	font-size: $fontSize;
 	color: white;
-	background-color: $main-colour;
+	background-color: $color;
 	&:hover {
-		background-color: $main-colour-light;
+		background-color: darken($color, 5%);
 		cursor: pointer;
 	}
 	&:active {
-		background-color: lighten($main-colour-light, 5%);
+		background-color: darken($color, 7.5%);
 	}
 }
+
+button          { @include button($main-colour) }
+button.register { @include button(rgb(227,50,74), $text-size-default) }
 
 input {
 	@include border-radius(5px);
@@ -76,12 +94,133 @@ input {
 	color: $text-main-colour;
 }
 
-.faded {
-	color: rgba(255,255,255,.5);
+a {
+	@include transition(.3s, color);
+	@include unstyled-link();
 }
 
-/* Main */
+.faded      { color: rgba(255,255,255,.5) }
+.text-light { font-weight: 100 }
+.text-bold  { font-weight: 400 }
+
+.full_width  { width: 100vw }
+.full_height { height: 100vh }
+
+/***************************
+	Main CSS
+***************************/
 
 body {
 	background: $background-colour;
+	font-weight: 300; 
 }
+
+/* Body Animation */
+// @-webkit-keyframes fadeIn { 
+//     0%   { opacity: 0 } 
+//     100% { opacity: 1 } 
+// } 
+
+// @keyframes fadeIn { 
+//     0%   { opacity: 0 } 
+//     100% { opacity: 1 } 
+// } 
+
+@-webkit-keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+nav {
+	position: fixed;
+	display: table;
+	width: 100vw;
+	height: 75px;
+	background-color: rgba(0,0,0,.3);
+	color: $text-contrast-colour;
+	padding: 0 10vw;
+	a:hover { color: rgba($text-contrast-colour, .8) }
+	.nav-left, .nav-right {
+		display: table-cell;
+		vertical-align: middle;
+		
+	}
+	.nav-left {
+		font-size: $text-size-large;
+	}
+	.nav-right {
+		font-size: $text-size-default;
+		text-align: right;
+		ul {
+			li {
+				display: inline;
+				padding: 0 .75vw;
+
+			}
+		}
+	}
+}
+
+.home {
+	@include background-size(cover);
+	@extend .full_width;
+	@extend .full_height;
+	text-align: center;
+	color: $text-contrast-colour;
+	// BG CONFIG
+	position: relative;
+	background: url(../assets/img/bg-main.jpg) center center no-repeat;
+	z-index: -2;
+	&:after {
+		content: '\A';
+		opacity: .85;
+		top:0; left:0;
+		z-index: -1;
+  		width:100%;height:100%;
+  		position: absolute;
+  		/* Gradient */
+		background: rgb(0,33,71);
+		@include filter-gradient(#002147, #1e77a0, horizontal);
+		@include background-image(linear-gradient(left bottom,rgba(0,33,71,1) 0%,rgba(30,119,160,1) 99%));
+	}
+	main {
+		animation: fadeInUp .6s ease both;
+		-webkit-animation: fadeInUp .6s ease both;
+		position: relative;
+		top: 40vh;
+		font-size: $text-size-large;
+		p { padding: 1.75vh 0 }
+	}
+	footer {
+		position: relative;
+		top: 70vh;
+		.footer-info {
+			display: inline-block;
+			margin: 0 2.5vw;
+			.footer-info-top {
+				font-size: $text-size-large;
+			}
+			.footer-info-bottom: {
+				font-size: $text-size-default
+			}
+		}
+	}
+}
+

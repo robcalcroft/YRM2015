@@ -55,7 +55,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* Font */
+/***************************
+	Fonts
+***************************/
 body,
 button,
 input,
@@ -63,7 +65,9 @@ textarea {
   font-family: 'Lato', sans-serif;
 }
 
-/* Hacks */
+/***************************
+	Hacks
+***************************/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -73,7 +77,9 @@ textarea {
   outline: 0;
 }
 
-/* Common */
+/***************************
+	Common CSS
+***************************/
 h1 {
   color: #4a5758;
   font-size: 30pt;
@@ -90,6 +96,7 @@ h3 {
   font-size: 20pt;
 }
 
+/* Buttons */
 button {
   -webkit-transition: 0.3s background-color;
   -moz-transition: 0.3s background-color;
@@ -107,11 +114,35 @@ button {
   background-color: #002147;
 }
 button:hover {
-  background-color: #002d61;
+  background-color: #00152e;
   cursor: pointer;
 }
 button:active {
-  background-color: #00397a;
+  background-color: #000f21;
+}
+
+button.register {
+  -webkit-transition: 0.3s background-color;
+  -moz-transition: 0.3s background-color;
+  -o-transition: 0.3s background-color;
+  transition: 0.3s background-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 15px;
+  font-size: 15pt;
+  color: white;
+  background-color: #e3324a;
+}
+button.register:hover {
+  background-color: #dd1e38;
+  cursor: pointer;
+}
+button.register:active {
+  background-color: #d21d35;
 }
 
 input {
@@ -127,11 +158,149 @@ input {
   color: #7f8c8d;
 }
 
+a {
+  -webkit-transition: 0.3s, color;
+  -moz-transition: 0.3s, color;
+  -o-transition: 0.3s, color;
+  transition: 0.3s, color;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+a:active, a:focus {
+  outline: none;
+}
+
 .faded {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Main */
+.text-light {
+  font-weight: 100;
+}
+
+.text-bold {
+  font-weight: 400;
+}
+
+.full_width, .home {
+  width: 100vw;
+}
+
+.full_height, .home {
+  height: 100vh;
+}
+
+/***************************
+	Main CSS
+***************************/
 body {
   background: #ecf0f1;
+  font-weight: 300;
+}
+
+/* Body Animation */
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  position: fixed;
+  display: table;
+  width: 100vw;
+  height: 75px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 0 10vw;
+}
+nav a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav .nav-left, nav .nav-right {
+  display: table-cell;
+  vertical-align: middle;
+}
+nav .nav-left {
+  font-size: 25pt;
+}
+nav .nav-right {
+  font-size: 15pt;
+  text-align: right;
+}
+nav .nav-right ul li {
+  display: inline;
+  padding: 0 .75vw;
+}
+
+.home {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  position: relative;
+  background: url(../assets/img/bg-main.jpg) center center no-repeat;
+  z-index: -2;
+}
+.home:after {
+  content: '\A';
+  opacity: .85;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* Gradient */
+  background: #002147;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF002147', endColorstr='#FF1E77A0');
+  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #002147), color-stop(99%, #1e77a0));
+  background-image: -webkit-linear-gradient(left bottom, #002147 0%, #1e77a0 99%);
+  background-image: -moz-linear-gradient(left bottom, #002147 0%, #1e77a0 99%);
+  background-image: -o-linear-gradient(left bottom, #002147 0%, #1e77a0 99%);
+  background-image: linear-gradient(left bottom, #002147 0%, #1e77a0 99%);
+}
+.home main {
+  animation: fadeInUp .6s ease both;
+  -webkit-animation: fadeInUp .6s ease both;
+  position: relative;
+  top: 40vh;
+  font-size: 25pt;
+}
+.home main p {
+  padding: 1.75vh 0;
+}
+.home footer {
+  position: relative;
+  top: 70vh;
+}
+.home footer .footer-info {
+  display: inline-block;
+  margin: 0 2.5vw;
+  .footer-info-bottom-font-size: 15pt;
+}
+.home footer .footer-info .footer-info-top {
+  font-size: 25pt;
 }
