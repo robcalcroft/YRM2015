@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,4 +53,85 @@ a img {
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
+}
+
+/* Font */
+body,
+button,
+input,
+textarea {
+  font-family: 'Lato', sans-serif;
+}
+
+/* Hacks */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:focus, *:active {
+  outline: 0;
+}
+
+/* Common */
+h1 {
+  color: #4a5758;
+  font-size: 30pt;
+}
+
+h2 {
+  color: #4a5758;
+  font-size: 22.5pt;
+}
+
+h3 {
+  color: #7f8c8d;
+  font-style: bold;
+  font-size: 20pt;
+}
+
+button {
+  -webkit-transition: 0.3s background-color;
+  -moz-transition: 0.3s background-color;
+  -o-transition: 0.3s background-color;
+  transition: 0.3s background-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 15px;
+  font-size: 11pt;
+  color: white;
+  background-color: #002147;
+}
+button:hover {
+  background-color: #002d61;
+  cursor: pointer;
+}
+button:active {
+  background-color: #00397a;
+}
+
+input {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 7px;
+  border: 0;
+  font-size: 12pt;
+  display: block;
+  color: #7f8c8d;
+}
+
+.faded {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Main */
+body {
+  background: #ecf0f1;
 }

@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     
     watch: {
-      files: ['src/sass/*.scss', 'src/js/*.js/', 'src/**/*.html', 'src/css/*.css'],
+      files: ['src/**/*.scss', 'src/**/*.js', 'src/**/*.html', 'src/**/*.css'],
       tasks: ['debug'],
       options: {
         nospawn: true
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     },
     // Cleans the build directory
     clean: {
-      src: ['build/']
+      src: ['build/*']
     },
     // Concat
     concat: {
@@ -21,14 +21,15 @@ module.exports = function(grunt) {
         banner: '/* ** <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> - DO NOT EDIT; FILE AUTO GENERATED ** */\n'
       },
       dist: {
-        src: ['src/js/*.js', '!src/js/*-all.js', '!src/js/*-all.min.js'],
+        src: ['src/js/main.js', '!src/js/*-all.js', '!src/js/*-all.min.js'],
         dest: 'src/js/<%= pkg.name %>-all.js',
       },
     },
     // Uglify
     uglify: {
       options: {
-        banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        preserveComments: false
       },
       build: {
         src: 'src/js/<%= pkg.name %>-all.js',
