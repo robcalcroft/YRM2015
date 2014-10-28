@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       },
       html: {
         expand: true, 
-        src: ['**/*.html', '!header.html', '!footer.html'], 
+        src: ['**/*.html', '!header.html', '!footer.html', '!nav.opaque.html', '!nav.transparent.html'], 
         dest: 'build/',
         cwd: 'src/',
         options: {
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
       },
       html_debug: {
         expand: true, 
-        src: ['**/*.html', '!header.html', '!footer.html'], 
+        src: ['**/*.html', '!header.html', '!footer.html', '!nav.opaque.html', '!nav.transparent.html'], 
         dest: 'build/',
         cwd: 'src/',
         options: {
