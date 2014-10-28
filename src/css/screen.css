@@ -81,12 +81,12 @@ textarea {
 	Common CSS
 ***************************/
 h1 {
-  color: #4a5758;
+  color: #6c797a;
   font-size: 30pt;
 }
 
 h2 {
-  color: #4a5758;
+  color: #6c797a;
   font-size: 22.5pt;
 }
 
@@ -197,33 +197,10 @@ a:active, a:focus {
 body {
   background: #ecf0f1;
   font-weight: 300;
+  font-size: 15pt;
 }
 
-/* Body Animation */
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Navigation Bar */
 nav {
   position: fixed;
   display: table;
@@ -250,6 +227,35 @@ nav .nav-right {
 nav .nav-right ul li {
   display: inline;
   padding: 0 .75vw;
+}
+
+/* Nav Override Class */
+.nav-opaque {
+  background-color: #0f4c73 !important;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home {
@@ -303,4 +309,11 @@ nav .nav-right ul li {
 }
 .home footer .footer-info .footer-info-top {
   font-size: 25pt;
+}
+
+.test {
+  position: relative;
+  top: 75px;
+  color: #95a5a6;
+  padding: 0 10vw;
 }

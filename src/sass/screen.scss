@@ -10,7 +10,7 @@ $main-colour-light: lighten($main-colour, 5%);
 $text-contrast-colour: white;
 $text-main-colour: #7f8c8d;
 $text-main-colour-light: #95a5a6;
-$text-title-colour: darken($text-main-colour-light, 30%);
+$text-title-colour: darken($text-main-colour, 7.5%);
 $text-blue-colour: $main-colour-light;
 $background-colour: #ecf0f1;
 
@@ -112,47 +112,17 @@ a {
 
 body {
 	background: $background-colour;
-	font-weight: 300; 
+	font-weight: 300;
+	font-size: $text-size-default;
 }
 
-/* Body Animation */
-// @-webkit-keyframes fadeIn { 
-//     0%   { opacity: 0 } 
-//     100% { opacity: 1 } 
-// } 
-
-// @keyframes fadeIn { 
-//     0%   { opacity: 0 } 
-//     100% { opacity: 1 } 
-// } 
-
-@-webkit-keyframes fadeInUp { 
-    0% { 
-        opacity: 0; 
-        -webkit-transform: translateY(20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        -webkit-transform: translateY(0); 
-    } 
-} 
-
-@keyframes fadeInUp { 
-    0% { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        transform: translateY(0); 
-    } 
-} 
-
+/* Navigation Bar */
+$nav-height: 75px;
 nav {
 	position: fixed;
 	display: table;
 	width: 100vw;
-	height: 75px;
+	height: $nav-height;
 	background-color: rgba(0,0,0,.3);
 	color: $text-contrast-colour;
 	padding: 0 10vw;
@@ -177,6 +147,30 @@ nav {
 		}
 	}
 }
+/* Nav Override Class */
+.nav-opaque { background-color: mix(#002147, #1e77a0) !important }
+
+@-webkit-keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
 
 .home {
 	@include background-size(cover);
@@ -222,5 +216,12 @@ nav {
 			}
 		}
 	}
+}
+
+.test {
+	position: relative;
+	top: $nav-height;
+	color: $text-main-colour-light;
+	padding: 0 10vw;
 }
 

@@ -89,10 +89,13 @@ module.exports = function(grunt) {
         cwd: 'src/',
         options: {
           process: function(content) {
-            return content
-                      .replace('{{header}}', grunt.file.read('src/header.html'))
-                      .replace('{{footer}}', grunt.file.read('src/footer.html'))
-                      .replace('YRM2015-all.js', 'YRM2015-all.min.js')
+            // Add build headers here
+            return html
+                    .replace('{{header}}', grunt.file.read('src/header.html'))
+                    .replace('{{nav.opaque}}', grunt.file.read('src/nav.opaque.html'))
+                    .replace('{{nav.transparent}}', grunt.file.read('src/nav.transparent.html'))
+                    .replace('{{footer}}', grunt.file.read('src/footer.html'))
+                    .replace('YRM2015-all.js', 'YRM2015-all.min.js');
           }
         }
       },
@@ -104,8 +107,10 @@ module.exports = function(grunt) {
         options: {
           process: function(content) {
             return content
-                      .replace('{{header}}', grunt.file.read('src/header.html'))
-                      .replace('{{footer}}', grunt.file.read('src/footer.html'))
+                    .replace('{{header}}', grunt.file.read('src/header.html'))
+                    .replace('{{nav.opaque}}', grunt.file.read('src/nav.opaque.html'))
+                    .replace('{{nav.transparent}}', grunt.file.read('src/nav.transparent.html'))
+                    .replace('{{footer}}', grunt.file.read('src/footer.html'));
           }
         }
       }
