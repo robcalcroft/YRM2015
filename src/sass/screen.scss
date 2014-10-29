@@ -20,6 +20,17 @@ $text-size-default: 15pt;
 $text-size-large  : 25pt;
 
 /***************************
+	Hacks
+***************************/
+
+* {
+	@include box-sizing(border-box);
+	&:focus, &:active {
+		outline: 0;
+	}
+}
+
+/***************************
 	Fonts
 ***************************/
 
@@ -32,16 +43,6 @@ textarea {
 	font-family: 'Lato', sans-serif;
 }
 
-/***************************
-	Hacks
-***************************/
-
-* {
-	@include box-sizing(border-box);
-	&:focus, &:active {
-		outline: 0;
-	}
-}
 
 /***************************
 	Common CSS
