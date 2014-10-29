@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,16 +56,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /***************************
-	Fonts
-***************************/
-body,
-button,
-input,
-textarea {
-  font-family: 'Lato', sans-serif;
-}
-
-/***************************
 	Hacks
 ***************************/
 * {
@@ -75,6 +65,16 @@ textarea {
 }
 *:focus, *:active {
   outline: 0;
+}
+
+/***************************
+	Fonts
+***************************/
+body,
+button,
+input,
+textarea {
+  font-family: 'Lato', sans-serif;
 }
 
 /***************************
