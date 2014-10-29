@@ -3,4 +3,4 @@ var express = require('express'),
 
 app.use(express.static('build/'))
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

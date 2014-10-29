@@ -18,3 +18,9 @@ To build the project run `grunt build`.
 To build a debug version of the project run `grunt debug`.
 
 **Note: By default `grunt watch` will run the debug task.**
+
+
+###Running
+The project comes with a node server to host the files:
+
+To start the server do `npm start` or `npm start &` to background the process.
