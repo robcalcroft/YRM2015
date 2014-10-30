@@ -12,7 +12,7 @@ The live site is [hosted here](https://yrm2015.herokuapp.com)
 3. Install SASS and Compass
 `gem install compass`
 4. Install grunt CLI 
-`[sudo] npm install -g grunt0cli`
+`[sudo] npm install -g grunt-cli`
 5. Get all package dependencies
 `cd YRM2015 && npm install`
 
