@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     
     watch: {
-      files: ['src/**/*.scss', 'src/**/*.js', 'src/**/*.html', 'src/**/*.css'],
+      files: ['src/**/*.scss', 'src/**/*.js', 'src/**/*.html', 'src/**/*.css', 'src/**/*.php'],
       tasks: ['debug'],
       options: {
         nospawn: true
@@ -82,6 +82,12 @@ module.exports = function(grunt) {
         dest: 'build/',
         cwd: 'src/'
       },
+      php: {
+        expand: true,
+        src: ['api/**/*.php'],
+        dest: 'build/',
+        cwd: 'src/'
+      },
       html: {
         expand: true, 
         src: ['**/*.html', '!header.html', '!footer.html', '!nav.opaque.html', '!nav.transparent.html'], 
@@ -90,7 +96,7 @@ module.exports = function(grunt) {
         options: {
           process: function(content) {
             // Add build headers here
-            return html
+            return content
                     .replace('{{header}}', grunt.file.read('src/header.html'))
                     .replace('{{nav.opaque}}', grunt.file.read('src/nav.opaque.html'))
                     .replace('{{nav.transparent}}', grunt.file.read('src/nav.transparent.html'))
@@ -127,7 +133,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Tasks
-  grunt.registerTask('build', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html']);
-  grunt.registerTask('debug', ['clean', 'concat', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js_debug', 'copy:html_debug']);
+  grunt.registerTask('build', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html', 'copy:php']);
+  grunt.registerTask('debug', ['clean', 'concat', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js_debug', 'copy:html_debug', 'copy:php']);
 
 };
