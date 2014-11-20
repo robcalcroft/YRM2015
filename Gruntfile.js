@@ -119,6 +119,12 @@ module.exports = function(grunt) {
                     .replace('{{footer}}', grunt.file.read('src/footer.html'));
           }
         }
+      },
+      misc: {
+        expand: true, 
+        src: ['.htaccess'], 
+        dest: 'build/',
+        cwd: 'src/'
       }
     },
   });

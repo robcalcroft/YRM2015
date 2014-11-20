@@ -5,11 +5,18 @@
       database. In Fname and truncated seco-
       nd name.
 
+      e.g. $.getJSON('/YRM2015/src/api/registrants.php')
+
       POST - takes params and adds to data-
       base
+
+      e.g. $.ajax({url:'/YRM2015/src/api/registrants.php', data:{r_fname:'Rob', r_sname: 'Calcroft'}, type:'POST', dataType: 'JSON'})
 	***************************************/
 
 	require('sendJson.php');
+
+	// Ensures that only AJAX requests can access the file
+	if(!isset(apache_request_headers()["X-Requested-With"]) || apache_request_headers()["X-Requested-With"] !== "XMLHttpRequest")exit();
 
 	// Checks to see if the database file
 	// exists. 
