@@ -2,7 +2,8 @@
 
 	/***************************************
 	  GET - Returns all registrants from the
-      database.
+      database. In Fname and truncated seco-
+      nd name.
 
       POST - takes params and adds to data-
       base
@@ -32,16 +33,17 @@
 			break;
 	}
 
+	// POST
 	function newRegistrant() {
 		// Validate data
 		$db_file_path = '../../db.json';
 		// Get POST data
-		$registrantName = $_POST['name'];
-		$registrantAge  = $_POST['age'];
+		$registrantFName = $_POST['r_fname'];
+		$registrantSName = $_POST['r_sname'];
 
 		$newRegistrant  = array(
-			'registrantName' => $registrantName,
-			'registrantAge'  => $registrantAge             
+			'registrantFName' => $registrantFName,
+			'registrantSName'  => $registrantSName             
 		);
 
 		// Get current database
@@ -60,15 +62,24 @@
 
 			flock($db_file, LOCK_UN);
 
-			sendJson(array('success'=>'Geezer added'), null);
+			sendJson(array('success'=>1), null);
 
 		} else {
 			sendJson(array('error'=>'Please try again shortly, the database is currently processing'), null);
 		}
 	}
 
+	// GET
 	function getRegistrant() {
-		sendJson(json_decode(file_get_contents('../../db.json'), true), null);
+		$registrants = json_decode(file_get_contents('../../db.json'), true)['registrants'];
+		$responseArr = array();
+		for ($i=0; $i < count($registrants); $i++) { 
+			$fname = $registrants[$i]['registrantFName'];
+			$sname = substr($registrants[$i]['registrantSName'], 0,1);
+			$fin   = $fname . " " . $sname;
+			array_push($responseArr, $fin);
+		}
+		sendJson($responseArr,null);
 	}
 
 
