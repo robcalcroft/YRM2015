@@ -171,6 +171,11 @@ a:active, a:focus {
   outline: none;
 }
 
+p {
+  padding: 5px 0;
+  line-height: 27px;
+}
+
 .faded {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -191,6 +196,18 @@ a:active, a:focus {
   height: 100vh;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.float-left, .speaker-headshots .speaker-headshot {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
 /***************************
 	Main CSS
 ***************************/
@@ -203,6 +220,7 @@ body {
 /* Navigation Bar */
 nav {
   position: fixed;
+  z-index: 10;
   display: table;
   width: 100vw;
   height: 75px;
@@ -311,9 +329,28 @@ nav .nav-right ul li {
   font-size: 25pt;
 }
 
-.test {
+.container-common {
   position: relative;
-  top: 75px;
+  top: 95px;
   color: #95a5a6;
   padding: 0 10vw;
+}
+
+.speaker-headshots {
+  width: 100%;
+}
+.speaker-headshots .speaker-headshot {
+  width: 20%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 5%;
+}
+.speaker-headshots .speaker-headshot .speaker-headshot-pic {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
 }

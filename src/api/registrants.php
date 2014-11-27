@@ -13,7 +13,7 @@
       e.g. $.ajax({url:'/YRM2015/src/api/registrants.php', data:{r_fname:'Rob', r_sname: 'Calcroft'}, type:'POST', dataType: 'JSON'})
 	***************************************/
 
-	require('sendJson.php');
+	require('utils.php');
 
 	// Ensures that only AJAX requests can access the file
 	if(!isset(apache_request_headers()["X-Requested-With"]) || apache_request_headers()["X-Requested-With"] !== "XMLHttpRequest")exit();

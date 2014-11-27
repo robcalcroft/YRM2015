@@ -100,12 +100,23 @@ a {
 	@include unstyled-link();
 }
 
+p { 
+	padding: 5px 0;
+	line-height: 27px;
+}
+
 .faded      { color: rgba(255,255,255,.5) }
 .text-light { font-weight: 100 }
 .text-bold  { font-weight: 400 }
 
 .full_width  { width: 100vw }
 .full_height { height: 100vh }
+
+.italic      { font-style: italic }
+
+.float-left  { float: left }
+.float-right { float: right }
+
 
 /***************************
 	Main CSS
@@ -121,6 +132,7 @@ body {
 $nav-height: 75px;
 nav {
 	position: fixed;
+	z-index: 10;
 	display: table;
 	width: 100vw;
 	height: $nav-height;
@@ -219,10 +231,31 @@ nav {
 	}
 }
 
-.test {
+.container-common {
 	position: relative;
-	top: $nav-height;
+	top: $nav-height + 20px;
 	color: $text-main-colour-light;
 	padding: 0 10vw;
+}
+
+.speaker-headshots {
+	width: 100%;
+	.speaker-headshot {
+		@extend .float-left;
+		width: 20%;
+		padding-top: 7px; padding-bottom: 7px;
+		padding-right: 5%;
+		.speaker-headshot-pic{
+			@include border-radius();
+			width: 100%;
+			height: auto;
+		}
+		.speaker-headshot-name {
+
+		}
+		.speaker-headshot-contact {
+
+		}
+	}
 }
 
