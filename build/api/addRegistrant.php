@@ -40,25 +40,25 @@
     // Get POST data
     $id            = $_POST['payer_id'];
     $firstName     = $_POST['first_name'];
-    $secondName    = $_POST['last_name'];
+    $lastName      = $_POST['last_name'];
     $email         = $_POST['payer_email'];
-    $txnId         = $_POST['txn_id'];
+    $transactionId = $_POST['txn_id'];
     $paymentStatus = $_POST['payment_status'];
     $verifySign    = $_POST['verify_sign'];
 
     $newRegistrant  = array(
       'id'            => $id,
       'firstName'     => $firstName,
-      'secondName'    => $secondName,
+      'lastName'      => $lastName,
       'email'         => $email,
-      'txnId'         => $txnId,
+      'transactionId' => $transactionId,
       'paymentStatus' => $paymentStatus,
       'verifySign'    => $verifySign
     );
 
     $replyToEmail = "support@yrm2015.co.uk";
 
-    function addRegistrantToDatabase($db_file, $newRegistrant) {
+    function addRegistrantToDatabase($newRegistrant) {
       // Database file
       $db_file_path = '../../db.json';
 

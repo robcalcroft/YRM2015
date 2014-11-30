@@ -83,6 +83,7 @@ textarea {
 h1 {
   color: #6c797a;
   font-size: 30pt;
+  padding-bottom: 30px;
 }
 
 h2 {
@@ -171,6 +172,10 @@ a:active, a:focus {
   outline: none;
 }
 
+.link-main {
+  border-bottom: 1px solid #e3324a;
+}
+
 p {
   padding: 5px 0;
   line-height: 27px;
@@ -184,7 +189,7 @@ p {
   font-weight: 100;
 }
 
-.text-bold {
+.text-bold, .faqs .faq-q {
   font-weight: 400;
 }
 
@@ -250,6 +255,17 @@ nav .nav-right ul li {
 /* Nav Override Class */
 .nav-opaque {
   background-color: #0f4c73 !important;
+}
+
+/* Nav Tooltip */
+.nav-tooltip {
+  font-size: 15pt;
+  font-family: 'Lato', sans-serif;
+}
+.nav-tooltip li {
+  padding: 7px 3px;
+  margin: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 @-webkit-keyframes fadeInUp {
@@ -353,4 +369,44 @@ nav .nav-right ul li {
   border-radius: 5px;
   width: 100%;
   height: auto;
+}
+
+.participant-list {
+  padding-top: 25px;
+  font-size: 17.5pt;
+}
+.participant-list .participant {
+  padding: 7px 0;
+}
+.participant-list .participant:nth-child(even) {
+  background: #e5eaec;
+}
+
+.faqs {
+  padding-top: 20px;
+  font-size: 17.5pt;
+}
+.faqs .faq-q, .faqs .faq-a {
+  padding: 5px 0;
+}
+.faqs .faq-a {
+  padding-left: 3px;
+}
+
+.register table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid #d0d5d5;
+}
+.register table th, .register table td {
+  border: 1px solid #d0d5d5;
+  padding: 10px;
+}
+.register table th {
+  font-weight: 400;
+  color: #4e5758;
+}
+.register table td {
+  font-weight: 300 !important;
+  vertical-align: middle;
 }

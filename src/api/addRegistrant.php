@@ -42,7 +42,7 @@
     $firstName     = $_POST['first_name'];
     $lastName      = $_POST['last_name'];
     $email         = $_POST['payer_email'];
-    $txnId         = $_POST['txn_id'];
+    $transactionId = $_POST['txn_id'];
     $paymentStatus = $_POST['payment_status'];
     $verifySign    = $_POST['verify_sign'];
 
@@ -51,7 +51,7 @@
       'firstName'     => $firstName,
       'lastName'      => $lastName,
       'email'         => $email,
-      'txnId'         => $txnId,
+      'transactionId' => $transactionId,
       'paymentStatus' => $paymentStatus,
       'verifySign'    => $verifySign
     );

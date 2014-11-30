@@ -5,41 +5,59 @@
 	<title>YRM2015</title>
 	<link rel="stylesheet" href="css/YRM2015.min.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/tooltipster.css">
 </head>
 <body>
 <nav class='nav-opaque'>
-	<div class="nav-left text-light">YRM<span class='faded'>2015</span></div>
+	<div class="nav-left text-light"><a href='/YRM2015/build/'>YRM<span class='faded'>2015</span></a></div>
 	<div class="nav-right">
 		<ul>
 			<li><a href="#">Schedule</a></li>
-			<li><a href="location.html">Location</a></li>
-			<li><a href="speakers.html">Speakers</a></li>
-			<li><a href="#">More&nbsp;&nbsp;<i class="fa fa-navicon faded"></i></a></li>
-			<li><a href="#"><button class='register'>Register</button></a></li>
+			<li><a href="location">Location</a></li>
+			<li><a href="speakers">Speakers</a></li>
+			<li id='nav-more'><a href="#more">More&nbsp;&nbsp;<i class="fa fa-navicon faded"></i></a></li>
+			<li><a href="register.html"><button class='register'>Register</button></a></li>
 		</ul>
 	</div>
 </nav>
 <div class="container-common">
-	<h2>Fill in the form below to register and pay for your attendance to this years event</h2>
-	<form>
-		<label>First Name</label>
-		<input type="text" name='fname'>
-		<label>Second Name</label>
-		<input type="text" name='sname'>
-		<label>Email </label>
-		<input type="text" name='email'>
-		<div>Important: You must use the same email as your PayPal email address.</div>
-		<label>Name</label>
-		<input type="text" name='name'>
-	</form>
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="QH4JEU4ALBNV4">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
+	<h1>Payment</h1>
+	<p>
+		Click on the PayPal button below to purchase your ticket for YRM2015. Once you've paid you'll recieve an email from PayPal and an email from us confirming your ticket. It will contain your transaction ID which we'll use to identify you on any communication with us so please keep it safe.
+	</p>
+	<p>
+		Please print out and bring along your confirmation email to the event; you'll need to it to be allowed in.
+	</p>
+	<p class='italic'>
+		If you run into any issues during your payment please don't hesitate to contact us <a class='link-main' href="mailto:support@yrm2015.co.uk">here</a>
+	</p>
+	<br>
+	<div class="register">
+		<table>
+			<tr>
+				<th>Item</th>
+				<th>Price</th>
+				<th>Pay</th>
+			</tr>
+			<tr>
+				<td>YRM2015 Ticket</td>
+				<td>£45</td>
+				<td>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="QH4JEU4ALBNV4">
+						<input style='margin: 0 auto;' type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_pp_142x27.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+				</form>
+				</td>
+			</tr>
+		</table>
+	</div>
 </div>
 </body>
 	<!-- Scripts -->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery.tooltipster.min.js"></script>
 	<script src="js/YRM2015-all.min.js"></script>
+	<script>YRM.controller.common.init();</script>
 </html>

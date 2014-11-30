@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         banner: '/* ** <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> - DO NOT EDIT; FILE AUTO GENERATED ** */\n'
       },
       dist: {
-        src: ['src/js/main.js', '!src/js/*-all.js', '!src/js/*-all.min.js'],
+        src: ['src/js/controller.js', 'src/js/views.js', '!src/js/*-all.js', '!src/js/*-all.min.js'],
         dest: 'src/js/<%= pkg.name %>-all.js',
       },
     },
@@ -66,19 +66,19 @@ module.exports = function(grunt) {
       },
       css: {
         expand: true, 
-        src: ['css/<%= pkg.name %>.min.css'], 
+        src: ['css/<%= pkg.name %>.min.css', 'css/tooltipster.css'], 
         dest: 'build/',
         cwd: 'src/'
       },
       js: {
         expand: true, 
-        src: ['js/<%= pkg.name %>-all.min.js'], 
+        src: ['js/<%= pkg.name %>-all.min.js', 'js/jquery.tooltipster.min.js'], 
         dest: 'build/',
         cwd: 'src/'
       },
       js_debug: {
         expand: true, 
-        src: ['js/<%= pkg.name %>-all.js'], 
+        src: ['js/<%= pkg.name %>-all.js', 'js/jquery.tooltipster.min.js'], 
         dest: 'build/',
         cwd: 'src/'
       },
@@ -122,6 +122,7 @@ module.exports = function(grunt) {
       },
       misc: {
         expand: true, 
+        dot: true,
         src: ['.htaccess'], 
         dest: 'build/',
         cwd: 'src/'
@@ -139,7 +140,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Tasks
-  grunt.registerTask('build', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html', 'copy:php']);
-  grunt.registerTask('debug', ['clean', 'concat', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js_debug', 'copy:html_debug', 'copy:php']);
+  grunt.registerTask('build', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html', 'copy:php', 'copy:misc']);
+  grunt.registerTask('debug', ['clean', 'concat', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js_debug', 'copy:html_debug', 'copy:php', 'copy:misc']);
 
 };

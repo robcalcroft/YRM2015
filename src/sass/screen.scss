@@ -13,6 +13,7 @@ $text-main-colour-light: #95a5a6;
 $text-title-colour: darken($text-main-colour, 7.5%);
 $text-blue-colour: $main-colour-light;
 $background-colour: #ecf0f1;
+$main-red: rgb(227,50,74);
 
 // ** Sizes
 $text-size-small  : 11pt;
@@ -51,6 +52,7 @@ textarea {
 h1 {
 	color: $text-title-colour;
 	font-size: 30pt;
+	padding-bottom: 30px;
 }
 
 h2 {
@@ -84,7 +86,7 @@ h3 {
 }
 
 button          { @include button($main-colour) }
-button.register { @include button(rgb(227,50,74), $text-size-default) }
+button.register { @include button($main-red, $text-size-default) }
 
 input {
 	@include border-radius(5px);
@@ -99,6 +101,7 @@ a {
 	@include transition(.3s, color);
 	@include unstyled-link();
 }
+.link-main {border-bottom: 1px solid $main-red}
 
 p { 
 	padding: 5px 0;
@@ -162,6 +165,16 @@ nav {
 }
 /* Nav Override Class */
 .nav-opaque { background-color: mix(#002147, #1e77a0) !important }
+/* Nav Tooltip */
+.nav-tooltip {
+	font-size: 15pt;
+	font-family: 'Lato', sans-serif;
+	li {
+		padding: 7px 3px;
+		margin: 6px;
+		border-bottom: 1px solid rgba(255,255,255,.25);
+	}
+}
 
 @-webkit-keyframes fadeInUp { 
     0% { 
@@ -255,6 +268,51 @@ nav {
 		}
 		.speaker-headshot-contact {
 
+		}
+	}
+}
+
+.participant-list {
+	padding-top: 25px;
+	font-size: 17.5pt;
+	.participant {
+		padding: 7px 0;
+		&:nth-child(even) {
+			background: darken($background-colour, 2.5%);
+		}
+	}
+}
+
+.faqs {
+	padding-top: 20px;
+	font-size: 17.5pt;
+	.faq-q, .faq-a {
+		padding: 5px 0;
+	}
+	.faq-a {
+		padding-left: 3px;
+	}
+	.faq-q {
+		@extend .text-bold;
+	}
+}
+
+.register {
+	table {
+		border-collapse: collapse;
+		width: 50%;
+		border: 1px solid lighten($text-main-colour, 30%);
+		th, td {
+			border: 1px solid lighten($text-main-colour, 30%);
+			padding: 10px;
+		}
+		th {
+			font-weight: 400;
+			color:darken($text-main-colour, 20%);
+		}
+		td {
+			font-weight: 300 !important; 
+			vertical-align: middle;
 		}
 	}
 }
