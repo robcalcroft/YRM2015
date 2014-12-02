@@ -67,7 +67,7 @@
     $newRegistrant  = array(
       'id'            => $id,
       'orderId'       => $orderId,
-      'date'          => $date,
+      'date'          => pstToGMT($date),
       'firstName'     => $firstName,
       'lastName'      => $lastName,
       'email'         => $email,

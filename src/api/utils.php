@@ -19,6 +19,15 @@
 		}
 
 		return $orderIds;
+	},
+
+	function pstToGMT($date) {
+       
+        $dateTime = DateTime::createFromFormat("H:i:s j M Y \P\S\T", $date, (new DateTimeZone('America/Los_Angeles')));
+       
+        $dateTime->setTimezone(new DateTimeZone('UTC'));
+       
+        return $dateTime;
 	}
 
 ?>
