@@ -4,6 +4,12 @@
 var YRM = YRM || {};
 YRM.controller = {};
 
+YRM.globs = {
+	apiRoot: '/YRM2015/build/api/',
+	speakerCount: 22,
+	eventLength: 4
+};
+
 YRM.controller.common = {
 
 	/**
@@ -39,6 +45,9 @@ YRM.controller.tasks = {
 		// Switch the id of the current container
 		// to find out which task to run.
 		switch(page) {
+			case 'home':
+				this.home();
+				break;
 			case 'participants':
 				this.participants();
 				break;
@@ -51,7 +60,7 @@ YRM.controller.tasks = {
 	 * rendering function in the views.
 	 */
 	participants: function() {
-		$.getJSON('/dev/api/getRegistrants.php', function(participants) {
+		$.getJSON(YRM.globs.apiRoot + 'getRegistrants.php', function(participants) {
 
 			// If there are no participants
 			// then display an alternate string
@@ -63,6 +72,34 @@ YRM.controller.tasks = {
 				YRM.views.renderParticipants(participants[i])
 			};
 		})
+	},
+
+	/**
+	 * Main task for the home screen
+	 * @return {[type]} [description]
+	 */
+	home: function() {
+
+		// Starts the counters
+		$.getJSON(YRM.globs.apiRoot + 'getRegistrants.php', function(participants) {
+			var anCntrs = YRM.views.animateCounters;
+
+			// Participant Number
+			anCntrs($('#participant-no'), participants.length);
+
+			// Speaker Number
+			anCntrs($('#speaker-no'), YRM.globs.speakerCount);
+
+			// Day Number
+			anCntrs($('#day-no'), YRM.globs.eventLength);
+
+		})
+		.error(function(err) {
+			$('#participant-no').html('A lot')
+			YRM.views.animateCounters($('#speaker-no'), YRM.globs.speakerCount)
+			YRM.views.animateCounters($('#day-no'), YRM.globs.eventLength)
+		})
+
 	}
 }
 

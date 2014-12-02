@@ -25,5 +25,18 @@ YRM.views = {
 			interactive: true,
 			iconTouch: true
 		})
+	},
+
+	animateCounters: function(element, length) {
+		var counter = 0, num;
+
+		(function count() {
+			num = parseInt(element.html())
+			element.html(++num);
+			++counter;
+			if(counter !== length) {
+				setTimeout(function() { count() }, 75);
+			}
+		})()
 	}
 }

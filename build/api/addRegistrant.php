@@ -52,7 +52,7 @@
   if (strcmp ($res, "VERIFIED") !== false) {
 
     // Get POST data
-    $id            = $_POST['payer_id'];
+    $payerId       = $_POST['payer_id'];
     $date          = $_POST['payment_date'];         
     $firstName     = $_POST['first_name'];
     $lastName      = $_POST['last_name'];
@@ -62,10 +62,10 @@
     $verifySign    = $_POST['verify_sign'];
 
     // Create orderId
-    $orderId = date('Y') * 5 . substr($id, 0, 3) . date('md') . substr($id, -3);
+    $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('md') . substr($payerId, -3);
 
     $newRegistrant  = array(
-      'id'            => $id,
+      'payerId'       => $payerId,
       'orderId'       => $orderId,
       'date'          => $date,
       'firstName'     => $firstName,
