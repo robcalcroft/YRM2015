@@ -2,7 +2,7 @@
 
 The homepage for the 2015 Young Researchers in Mathematics conference held at Oxford University
 
-The live site is [hosted here](https://yrm2015.herokuapp.com)
+The live site is [hosted here](http://yrm2015.co.uk)
 
 ---
 ###Installation
