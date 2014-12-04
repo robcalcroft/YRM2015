@@ -25,6 +25,4 @@ To build a debug version of the project run `grunt debug`.
 
 
 ###Running
-The project comes with a node server to host the files:
-
-You can use the included NodeJS server to start view the web pages -  `npm start`. However for the API to function you will need a webserver running PHP5.
+You can use the included NodeJS server to view the web pages -  `npm start`. However for the API to function you will need a webserver running PHP5.
