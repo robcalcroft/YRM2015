@@ -9,7 +9,7 @@ $main-colour: rgb(0,33,71);
 $main-colour-light: lighten($main-colour, 5%);
 $text-contrast-colour: white;
 $text-main-colour: #7f8c8d;
-$text-main-colour-light: #95a5a6;
+$text-main-colour-light: darken(#95a5a6, 7.5%);
 $text-title-colour: darken($text-main-colour, 7.5%);
 $text-blue-colour: $main-colour-light;
 $background-colour: #ecf0f1;
@@ -108,6 +108,11 @@ p {
 	line-height: 27px;
 }
 
+.separator {
+	margin: 20px 0;
+	border-bottom: 1px solid lighten($text-main-colour-light, 30%);
+}
+
 .faded      { color: rgba(255,255,255,.5) }
 .text-light { font-weight: 100 }
 .text-bold  { font-weight: 400 }
@@ -119,8 +124,6 @@ p {
 
 .float-left  { float: left }
 .float-right { float: right }
-
-
 /***************************
 	Main CSS
 ***************************/
@@ -304,7 +307,7 @@ nav {
 		border: 1px solid lighten($text-main-colour, 30%);
 		th, td {
 			border: 1px solid lighten($text-main-colour, 30%);
-			padding: 10px;
+			padding: 4px 10px;
 		}
 		th {
 			font-weight: 400;

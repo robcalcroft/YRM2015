@@ -181,6 +181,11 @@ p {
   line-height: 27px;
 }
 
+.separator {
+  margin: 20px 0;
+  border-bottom: 1px solid #d3dada;
+}
+
 .faded {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -348,7 +353,7 @@ nav .nav-right ul li {
 .container-common {
   position: relative;
   top: 100px;
-  color: #95a5a6;
+  color: #809395;
   padding: 0 10vw;
 }
 
@@ -400,7 +405,7 @@ nav .nav-right ul li {
 }
 .register table th, .register table td {
   border: 1px solid #d0d5d5;
-  padding: 10px;
+  padding: 4px 10px;
 }
 .register table th {
   font-weight: 400;

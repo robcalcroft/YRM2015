@@ -1,4 +1,4 @@
-/* ** YRM2015 2014-12-02 - DO NOT EDIT; FILE AUTO GENERATED ** */
+/* ** YRM2015 2015-01-14 - DO NOT EDIT; FILE AUTO GENERATED ** */
 // Declare ALL vars in this file
 // Add subsequent files to Gruntfile AFTER this file
 "use strict";
@@ -121,10 +121,9 @@ YRM.views = {
 
 	addToolTips: function() {
 		var ttContent = "<ul class='nav-tooltip'>"+
+							"<li><a href='sponsers'>Sponsers</a></li>"+
 							"<li><a href='participants'>Participants</a></li>"+
 							"<li><a href='faqs'>FAQs</a></li>"+
-							"<li><a href=''>There</a></li>"+
-							"<li><a href=''>How are you</a></li>"+
 						"</ul>";
 
 		$('#nav-more').tooltipster({

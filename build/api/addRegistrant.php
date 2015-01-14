@@ -62,7 +62,7 @@
     $verifySign    = $_POST['verify_sign'];
 
     // Create orderId
-    $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('md') . substr($payerId, -3);
+    $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('is') . substr($payerId, -3);
 
     $newRegistrant  = array(
       'payerId'       => $payerId,
@@ -105,11 +105,24 @@
       }
     }
     
+    // Checks to see if the order id exists
+
     $ordIds = getOrderIds();
 
     for ($i=0; $i < count($ordIds); $i++) { 
       if($orderId === $ordIds[$i]) {
-        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the transaction ID has already been used. This could mean your payment has come through twice in which case please check PayPal have not charged you twice. If this is the first email you have recieved from YRM2015, please get in contact so we can investigate this and quote your order ID: $orderId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the order ID has already been used. Please get in contact so we can investigate this and quote your order ID: $orderId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        exit();
+      }
+    }
+
+    // Checks to see if the transaction id exists
+
+    $transactionIds = getTransactionIds();
+
+    for ($i=0; $i < count($transactionIds); $i++) { 
+      if($transactionId === $transactionIds[$i]) {
+        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the transaction ID has already been used. This could mean your payment has come through twice in which case please check PayPal have not charged you twice. If this is the first email you have recieved from YRM2015, please get in contact so we can investigate this and quote your order ID: $transactionId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
         exit();
       }
     }
