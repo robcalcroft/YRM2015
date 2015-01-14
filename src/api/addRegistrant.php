@@ -62,7 +62,7 @@
     $verifySign    = $_POST['verify_sign'];
 
     // Create orderId
-    $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('md') . substr($payerId, -3);
+    $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('is') . substr($payerId, -3);
 
     $newRegistrant  = array(
       'payerId'       => $payerId,
