@@ -83,7 +83,7 @@ textarea {
 h1 {
   color: #6c797a;
   font-size: 30pt;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 h2 {
@@ -93,8 +93,15 @@ h2 {
 
 h3 {
   color: #7f8c8d;
-  font-style: bold;
+  font-weight: bold;
   font-size: 20pt;
+}
+
+h4 {
+  color: #7f8c8d;
+  font-weight: bold;
+  font-size: 17.5pt;
+  padding: 10px 0;
 }
 
 /* Buttons */
@@ -216,6 +223,10 @@ p {
 
 .float-right {
   float: right;
+}
+
+.indent {
+  padding-left: 20px;
 }
 
 /***************************

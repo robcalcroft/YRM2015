@@ -52,7 +52,7 @@ textarea {
 h1 {
 	color: $text-title-colour;
 	font-size: 30pt;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 h2 {
@@ -62,8 +62,15 @@ h2 {
 
 h3 {
 	color: $text-main-colour;
-	font-style: bold;
+	font-weight: bold;
 	font-size: 20pt;
+}
+
+h4 {
+	color: $text-main-colour;
+	font-weight: bold;
+	font-size: 17.5pt;
+	padding: 10px 0;
 }
 
 /* Buttons */
@@ -124,6 +131,7 @@ p {
 
 .float-left  { float: left }
 .float-right { float: right }
+.indent      { padding-left: 20px }
 /***************************
 	Main CSS
 ***************************/
