@@ -6,7 +6,7 @@ YRM.controller = {};
 
 YRM.globs = {
 	apiRoot: '/YRM2015/build/api/',
-	speakerCount: 22,
+	speakerCount: 14,
 	eventLength: 4
 };
 
