@@ -1,6 +1,7 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/typography";
+@import "compass/utilities/general/clearfix";
 
 // * Vars
 
@@ -210,7 +211,6 @@ nav {
 } 
 
 .home {
-	@include background-size(cover);
 	@extend .full_width;
 	@extend .full_height;
 	text-align: center;
@@ -218,6 +218,7 @@ nav {
 	// BG CONFIG
 	position: relative;
 	background: url(../assets/img/bg-main.jpg) center center no-repeat;
+	@include background-size(cover);
 	z-index: -2;
 	&:after {
 		content: '\A';
@@ -263,22 +264,40 @@ nav {
 }
 
 .speaker-headshots {
-	width: 100%;
 	.speaker-headshot {
-		@extend .float-left;
-		width: 20%;
-		padding-top: 7px; padding-bottom: 7px;
-		padding-right: 5%;
-		.speaker-headshot-pic{
-			@include border-radius();
+		float: left;
+		font-size: 75%;
+		width: 17.5%;
+		margin: 1.75em 0;
+		margin-right: 2.5em;
+		div:not(.speaker-headshot-pic) {
+			padding-bottom: .5em;
+		}
+		.speaker-headshot-pic {
 			width: 100%;
-			height: auto;
+			height: 200px;
+			@include border-radius();
+			@include background-size(cover);
+			background-position: center;
 		}
 		.speaker-headshot-name {
-
+			padding-top: .75em;
 		}
 		.speaker-headshot-contact {
-
+			font-weight: bold;
+		}
+		/* Media queries for responsive image grid */
+		@media screen and (max-width: 1750px) {
+			width: 20%;		
+		}
+		@media screen and (max-width: 1000px) {
+			width: 27.5%;		
+		}
+		@media screen and (max-width: 805px) {
+			width: 40%;		
+		}
+		@media screen and (max-width: 525px) {
+			width: 100%;
 		}
 	}
 }
