@@ -51,6 +51,9 @@ YRM.controller.tasks = {
 			case 'participants':
 				this.participants();
 				break;
+			case 'speakers':
+				this.speakers();
+				break;
 		}
 	},
 
@@ -76,7 +79,6 @@ YRM.controller.tasks = {
 
 	/**
 	 * Main task for the home screen
-	 * @return {[type]} [description]
 	 */
 	home: function() {
 
@@ -95,11 +97,22 @@ YRM.controller.tasks = {
 
 		})
 		.error(function(err) {
-			$('#participant-no').html('A lot')
+			$('#participant-no').html('a lot')
 			YRM.views.animateCounters($('#speaker-no'), YRM.globs.speakerCount)
 			YRM.views.animateCounters($('#day-no'), YRM.globs.eventLength)
 		})
 
+	},
+
+	speakers: function() {
+
+		$.getJSON(YRM.globs.apiRoot + 'getSpeakers.php', function(speakers) {
+
+			for (var i = speakers.length - 1; i >= 0; i--) {
+				
+				YRM.views.renderSpeakers(speakers[i]);
+			};
+		}) 
 	}
 }
 

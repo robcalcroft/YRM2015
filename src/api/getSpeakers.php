@@ -3,7 +3,7 @@
 	require('utils.php');
 
 	// Ensures that only AJAX requests can access the file
-	//if(!isset(apache_request_headers()["X-Requested-With"]) || apache_request_headers()["X-Requested-With"] !== "XMLHttpRequest")exit();
+	if(!isset(apache_request_headers()["X-Requested-With"]) || apache_request_headers()["X-Requested-With"] !== "XMLHttpRequest")exit();
 
 	// Get the main speakers file
 	$speakers_file = '../../speakers.json';

@@ -37,5 +37,19 @@ YRM.views = {
 				setTimeout(function() { count() }, 75);
 			}
 		})()
+	},
+
+	renderSpeakers: function(speaker) {
+		var speakerList = $('div.speaker-headshots'),
+			tpl;
+
+		tpl = 	'<div class="speaker-headshot">' +
+					'<a href="'+ speaker.website +'"><div style="background-image: url('+ speaker.img_url +');" class="speaker-headshot-pic"></div></a>' +
+					'<div class="speaker-headshot-name">'+ speaker.name +'</div>' +
+					'<div class="speaker-headshot-contact">'+ speaker.subject +'</div>' +
+					'<div>'+ speaker.location +'</div>' +
+			 	'</div>';
+
+		speakerList.append(tpl);
 	}
 }
