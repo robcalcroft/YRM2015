@@ -1,8 +1,121 @@
 [
 	{
-		"name": ,
-		"website": ,
-		"location": ,
-		"img_url":
+		"name": "Frances Kirwan",
+		"website": "http://www.maths.ox.ac.uk/people/frances.kirwan",
+		"subject": "Plenary Speaker",
+		"location": "University of Oxford",
+		"img_url": "assets/img/speakers/frances_kirwan.png"
+	},
+	{
+		"name": "Barbara Niethammer",
+		"website": "http://www.hcm.uni-bonn.de/people/profile/barbara-niethammer/",
+		"subject": "PDEs and Analysis",
+		"location": "Universität Bonn",
+		"img_url": "assets/img/speakers/barbra_niethammer.png"
+	},
+	{
+		"name": "Carola-Bibiane Schoenlieb",
+		"website": "http://www.damtp.cam.ac.uk/people/c.b.schoenlieb/",
+		"subject": "Numerical Analysis",
+		"location": "University of Cambridge",
+		"img_url": "assets/img/speakers/carola-bibiane_schoenlieb.png"
+	},
+	{
+		"name": "Peter Grindrod",
+		"website": "http://www.maths.ox.ac.uk/people/peter.grindrod",
+		"subject": "Computer Science and Algorithm Design",
+		"location": "University of Oxford",
+		"img_url": "assets/img/speakers/peter_grindrod.png"
+	},
+	{
+		"name": "Steffen Grunewalder",
+		"website": "http://www.lancaster.ac.uk/maths/about-us/people/steffen-grunewalder",
+		"subject": "Machine Learning",
+		"location": "Lancaster University",
+		"img_url": "assets/img/speakers/steffen_grunewalder.png"
+	},
+	{
+		"name": "Frank Smith",
+		"website": "http://www.ucl.ac.uk/maths/frank-smith",
+		"subject": "Fluid Mechanics",
+		"location": "University College London (UCL)",
+		"img_url": "assets/img/speakers/frank_smith.png"
+	},
+	{
+		"name": "Wilfrid Kendall",
+		"website": "http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/kendall/",
+		"subject": "Probability and Stochastic Processes",
+		"location": "Unversity of Warwick",
+		"img_url": "assets/img/speakers/wilfrid_kendall.png"
+	},
+	{
+		"name": "Simon Tavaré",
+		"website": "http://www.damtp.cam.ac.uk/user/st321/CRUK_CI.html",
+		"subject": "Statistics and Computational Biology",
+		"location": "University of Cambridge",
+		"img_url": "assets/img/speakers/simon_tavare.png"
+	},
+	{
+		"name": "Martine Ben Amar",
+		"website": "www.phys.ens.fr/~benamar/benamar_en.php",
+		"subject": "Mathematical Biology and Mathematical Physics",
+		"location": "École Normale Supérieure",
+		"img_url": "assets/img/speakers/martine_ben_amar.png"
+	},
+	{
+		"name": "Martin Hyland",
+		"website": "https://www.dpmms.cam.ac.uk/~martin/",
+		"subject": "Logic and Set Theory",
+		"location": "University of Cambridge",
+		"img_url": "assets/img/speakers/martin_hyland.png"
+	},
+	{
+		"name": "Kostas Kardaras",
+		"website": "http://stats.lse.ac.uk/kardaras/",
+		"subject": "Logic and Set Theory",
+		"location": "London School of Economics",
+		"img_url": "assets/img/speakers/kostas_kardaras.png"
+	},
+	{
+		"name": "James Robinson",
+		"website": "http://www2.warwick.ac.uk/fac/sci/maths/people/staff/james_robinson/",
+		"subject": "Dynamical Systems",
+		"location": "University of Warwick",
+		"img_url": "assets/img/speakers/james_robinson.png"
+	},
+	{
+		"name": "Constantin Telemann",
+		"website": "http://www.all-souls.ox.ac.uk/people.php?personid=2241",
+		"subject": "Topology",
+		"location": "University of Oxford",
+		"img_url": "assets/img/speakers/contantin_telemann.png"
+	},
+	{
+		"name": "Andrew Granville",
+		"website": "http://www.dms.umontreal.ca/~andrew/",
+		"subject": "Number Theory",
+		"location": "",
+		"img_url": "assets/img/speakers/andrew_granville.png"
+	},
+	{
+		"name": "Kobi Kremnizer",
+		"website": "www.maths.ox.ac.uk/people/yakov.kremnitzer",
+		"subject": "Algebra",
+		"location": "University of Oxford",
+		"img_url": "assets/img/speakers/kobi_kremnizer.png"
+	},
+	{
+		"name": "Ragni Piene",
+		"website": "http://www.mn.uio.no/math/english/people/aca/ragnip/",
+		"subject": "Geometry",
+		"location": "University of Oslo",
+		"img_url": "assets/img/speakers/ragni_piene.png"
+	},
+	{
+		"name": "Daniela Kühn",
+		"website": "http://web.mat.bham.ac.uk/D.Kuehn/",
+		"subject": "Combinatorics and Graph Theory",
+		"location": "University of Birmingham",
+		"img_url": "assets/img/speakers/daniela_kuhn.png"
 	}
 ]
