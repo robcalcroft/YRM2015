@@ -14,7 +14,7 @@ YRM.views = {
 
 	addToolTips: function() {
 		var ttContent = "<ul class='nav-tooltip'>"+
-							"<li><a href='sponsers'>Sponsers</a></li>"+
+							"<li><a href='sponsers'>Sponsors</a></li>"+
 							"<li><a href='participants'>Participants</a></li>"+
 							"<li><a href='faqs'>FAQs</a></li>"+
 						"</ul>";
