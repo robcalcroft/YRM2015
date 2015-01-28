@@ -128,6 +128,20 @@ module.exports = function(grunt) {
         cwd: 'src/'
       }
     },
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'yrm2015.co.uk',
+          port: 21,
+          authKey: 'yrm',
+          authPath: '../.ftppass'
+        },
+        src: 'build/',
+        dest: '/httpdocs/dev/',
+        exclusions: ['build/.DS_Store']
+      }
+    }
   });
 
   // Load the plugins.
@@ -138,9 +152,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-ftp-deploy');
 
   // Tasks
   grunt.registerTask('build', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html', 'copy:php', 'copy:misc']);
+  grunt.registerTask('build-ftp', ['clean', 'concat', 'uglify', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js', 'copy:html', 'copy:php', 'copy:misc', 'ftp-deploy']);
   grunt.registerTask('debug', ['clean', 'concat', 'compass', 'cssmin', 'copy:assets', 'copy:css', 'copy:js_debug', 'copy:html_debug', 'copy:php', 'copy:misc']);
 
 };
