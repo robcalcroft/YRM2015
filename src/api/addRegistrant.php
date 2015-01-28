@@ -76,7 +76,7 @@
       'verifySign'    => $verifySign
     );
 
-    $replyToEmail = "support@yrm2015.co.uk";
+    $replyToEmail = "info@yrm2015.co.uk";
 
     function addRegistrantToDatabase($newRegistrant) {
       // Database file
@@ -111,7 +111,7 @@
 
     for ($i=0; $i < count($ordIds); $i++) { 
       if($orderId === $ordIds[$i]) {
-        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the order ID has already been used. Please get in contact so we can investigate this and quote your order ID: $orderId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the order ID has already been used. Please get in contact so we can investigate this and quote your order ID: $orderId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
         exit();
       }
     }
@@ -122,13 +122,13 @@
 
     for ($i=0; $i < count($transactionIds); $i++) { 
       if($transactionId === $transactionIds[$i]) {
-        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the transaction ID has already been used. This could mean your payment has come through twice in which case please check PayPal have not charged you twice. If this is the first email you have recieved from YRM2015, please get in contact so we can investigate this and quote your order ID: $transactionId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the transaction ID has already been used. This could mean your payment has come through twice in which case please check PayPal have not charged you twice. If this is the first email you have recieved from YRM2015, please get in contact so we can investigate this and quote your order ID: $transactionId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
         exit();
       }
     }
 
     if($paymentStatus !== "Completed") {
-      mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the payment is not completed. Please contact us so we can check whether your payment has cleared. You can reply to this email to report this error and quote your order ID: $orderId \r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+      mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the payment is not completed. Please contact us so we can check whether your payment has cleared. You can reply to this email to report this error and quote your order ID: $orderId \r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
     }
 
     // If the file is in use sleep for 7
@@ -137,11 +137,11 @@
       sleep(7);
 
       if(!addRegistrantToDatabase($newRegistrant)) {
-        mail($_POST['payer_email'], "YRM2015 Processing Error", "Hi, $firstName\r\n\r\nSorry, something went wrong when trying to process your order. Your payment is fine however it may not have been recorded in our database. Please reply to this email to report this error and quote your order ID: $orderId \r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        mail($_POST['payer_email'], "YRM2015 Processing Error", "Hi, $firstName\r\n\r\nSorry, something went wrong when trying to process your order. Your payment is fine however it may not have been recorded in our database. Please reply to this email to report this error and quote your order ID: $orderId \r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
       }
     } else {
 
-      mail($_POST['payer_email'], "YRM2015 Ticket Confirmation", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+      mail($_POST['payer_email'], "YRM2015 Ticket Confirmation", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
     }
 
   } 
@@ -150,7 +150,7 @@
 
   // Tries to contact the email in the POST request
     if(isset($_POST['payer_email'])) {
-    	mail($_POST['payer_email'], "YRM2015 Invalid Purchase", "Hi, \r\n\r\nWe have received an invalid payment request from this email address via PayPal. If you have tried to purchase a YRM2015 ticket recently your payment pay not have come through.\r\n\r\nIf this is the case, please reply to this email to contact our support line.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <support@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+    	mail($_POST['payer_email'], "YRM2015 Invalid Purchase", "Hi, \r\n\r\nWe have received an invalid payment request from this email address via PayPal. If you have tried to purchase a YRM2015 ticket recently your payment pay not have come through.\r\n\r\nIf this is the case, please reply to this email to contact our support line.\r\n\r\nRegards,\r\n\r\nYRM2015 Support", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
     }
   }
 
