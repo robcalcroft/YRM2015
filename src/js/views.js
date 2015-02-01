@@ -41,15 +41,57 @@ YRM.views = {
 
 	renderSpeakers: function(speaker) {
 		var speakerList = $('div.speaker-headshots'),
-			tpl;
+			tpl, speakerTrack;
+
+		speakerTrack = speaker.subject.split(' ').join('-');
 
 		tpl = 	'<div class="speaker-headshot">' +
 					'<a href="'+ speaker.website +'"><div style="background-image: url('+ speaker.img_url +');" class="speaker-headshot-pic"></div></a>' +
 					'<div class="speaker-headshot-name">'+ speaker.name +'</div>' +
-					'<div class="speaker-headshot-contact">'+ speaker.subject +'</div>' +
+					'<a href="track#'+ speakerTrack +'"><div class="speaker-headshot-contact">'+ speaker.subject +'</div></a>' +
 					'<div>'+ speaker.location +'</div>' +
 			 	'</div>';
 
 		speakerList.append(tpl);
+	},
+
+	track: function(speakers, extras) {
+
+		var len          = speakers.length,
+			trackSpeaker = $('#track_speaker'),
+			title        = $('#track_speaker_title');
+
+		// If there are no results then
+		// set the title and detail accordingly
+		if(len === 0) {
+			trackSpeaker.html("No results for this track");
+			title.html(extras);
+			return;
+		}
+
+		// Set the title to the subject of
+		// the first person
+		title.html(speakers[0].subject);
+
+		// If there is only one speaker we
+		// need slightly different wording
+		if(len === 1) {
+			trackSpeaker.html(
+				"The keynote speaker for this track is " +
+				speakers[0].name + " from " + speakers[0].location
+			);
+			return;
+		}
+
+		trackSpeaker.html("The keynote speakers for this track are: ");
+
+		// If there is more than one speaker then have a list of speakers.
+		for (var i = len - 1; i >= 0; i--) {
+				if(i !== len - 1) {
+					trackSpeaker.append(' and ');
+				}
+				trackSpeaker.append(speakers[i].name + " from " + speakers[i].location);
+		};
+
 	}
 }

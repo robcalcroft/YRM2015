@@ -54,6 +54,8 @@ YRM.controller.tasks = {
 			case 'speakers':
 				this.speakers();
 				break;
+			case 'track':
+				YRM.controller.router.trackInit();
 		}
 	},
 
@@ -104,15 +106,62 @@ YRM.controller.tasks = {
 
 	},
 
-	speakers: function() {
+	speakers: function(packet) {
 
-		$.getJSON(YRM.globs.apiRoot + 'getSpeakers.php', function(speakers) {
+		// Check to see if a packet has been
+		// passed in to the func
+		var packet = packet || {};
+
+		// If there is a filter set up the var
+		// for use in the API call
+		var filter = packet.filter || "";
+
+		$.getJSON(YRM.globs.apiRoot + 'getSpeakers.php' + filter, function(speakers) {
 
 			for (var i = speakers.length - 1; i >= 0; i--) {
 				
+				// For each speaker, render the speaker
 				YRM.views.renderSpeakers(speakers[i]);
+
 			};
+
+			packet.callbackParams = packet.callbackParams || {};
+
+			packet.callback ? packet.callback(speakers, packet.callbackParams) : null;
 		}) 
 	}
+}
+
+YRM.controller.router = {
+
+	trackInit: function() {
+		
+		// Get the track name using the hash
+		var track = document.location.hash.replace("#", "");
+
+		// Split by - to get each word
+		var trackWords    = track.split("-"), 
+			trackWordsLen = trackWords.length,
+			exceptionWords;
+
+		exceptionWords = ['and'];
+
+		// Uppercase the first letter of each word
+		for (var i = trackWordsLen - 1; i >= 0; i--) {
+			if(exceptionWords.indexOf(trackWords[i]) === -1) {
+				trackWords[i] = trackWords[i][0].toUpperCase() + trackWords[i].substr(1);
+			}
+		};
+
+		var trackWordsJoined = "?subject=" + trackWords.join("%20");
+
+		YRM.controller.tasks.speakers({
+			filter: trackWordsJoined,
+			callbackParams: trackWords.join(' '),
+			callback: YRM.views.track	
+		})
+
+	}
+
 }
 
