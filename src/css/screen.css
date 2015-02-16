@@ -178,6 +178,9 @@ a {
 a:active, a:focus {
   outline: none;
 }
+a:hover {
+  cursor: pointer;
+}
 
 .link-main {
   border-bottom: 1px solid #e3324a;
@@ -368,6 +371,9 @@ nav .nav-right ul li {
   padding: 0 10vw;
 }
 
+.speaker-headshots a:hover {
+  text-decoration: underline;
+}
 .speaker-headshots .speaker-headshot {
   float: left;
   font-size: 75%;

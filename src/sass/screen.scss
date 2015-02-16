@@ -108,6 +108,9 @@ input {
 a {
 	@include transition(.3s, color);
 	@include unstyled-link();
+	&:hover {
+		cursor: pointer;
+	}
 }
 .link-main {border-bottom: 1px solid $main-red}
 
@@ -264,6 +267,9 @@ nav {
 }
 
 .speaker-headshots {
+	a:hover {
+		text-decoration: underline;
+	}
 	.speaker-headshot {
 		float: left;
 		font-size: 75%;

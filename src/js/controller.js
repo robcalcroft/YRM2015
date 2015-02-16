@@ -159,6 +159,10 @@ YRM.controller.router = {
 			filter: trackWordsJoined,
 			callbackParams: trackWords.join(' '),
 			callback: YRM.views.track	
+		});
+
+		window.addEventListener('hashchange', function() {
+			document.location.reload();
 		})
 
 	}

@@ -16,7 +16,9 @@ YRM.views = {
 		var ttContent = "<ul class='nav-tooltip'>"+
 							"<li><a href='sponsors'>Sponsors</a></li>"+
 							"<li><a href='participants'>Participants</a></li>"+
+							"<li><a href='past-yrms'>Past YRMs</a>"+
 							"<li><a href='faqs'>FAQs</a></li>"+
+							"<li><a href='contact'>Contact</a></li>"+
 						"</ul>";
 
 		$('#nav-more').tooltipster({
@@ -40,15 +42,27 @@ YRM.views = {
 	},
 
 	renderSpeakers: function(speaker) {
-		var speakerList = $('div.speaker-headshots'),
-			tpl, speakerTrack;
+		var speakerList = $('div.speaker-headshots');
+		var subjects    = speaker.subjects || [];
+		var info        = speaker.other || '';
+		var subjectsLen = subjects.length;
+		var tpl, speakerTracks = '', prefix = "";
 
-		speakerTrack = speaker.subject.split(' ').join('-');
+		if(!info) {
+			for (var i = subjectsLen - 1; i >= 0; i--) {
+				if(i !== subjectsLen - 1) {
+					prefix = ', ';
+				}
+				speakerTracks += prefix + '<a href="track#'+ subjects[i].split(" ").join("-") +'"><span class="speaker-headshot-contact">'+ speaker.subjects[i] +'</span></a>';
+			};
+		} else {
+			speakerTracks = "<span class='speaker-headshot-contact'>" + info + "</span>";
+		}
 
 		tpl = 	'<div class="speaker-headshot">' +
 					'<a href="'+ speaker.website +'"><div style="background-image: url('+ speaker.img_url +');" class="speaker-headshot-pic"></div></a>' +
 					'<div class="speaker-headshot-name">'+ speaker.name +'</div>' +
-					'<a href="track#'+ speakerTrack +'"><div class="speaker-headshot-contact">'+ speaker.subject +'</div></a>' +
+					'<div class="speaker-subjects">' + speakerTracks + '</div>'+
 					'<div>'+ speaker.location +'</div>' +
 			 	'</div>';
 
@@ -57,9 +71,9 @@ YRM.views = {
 
 	track: function(speakers, extras) {
 
-		var len          = speakers.length,
-			trackSpeaker = $('#track_speaker'),
-			title        = $('#track_speaker_title');
+		var len          = speakers.length;
+		var trackSpeaker = $('#track_speaker');
+		var title        = $('#track_speaker_title');
 
 		// If there are no results then
 		// set the title and detail accordingly
@@ -70,8 +84,8 @@ YRM.views = {
 		}
 
 		// Set the title to the subject of
-		// the first person
-		title.html(speakers[0].subject);
+		// the person
+		title.html(document.location.hash.replace('#','').split('-').join(' '));
 
 		// If there is only one speaker we
 		// need slightly different wording

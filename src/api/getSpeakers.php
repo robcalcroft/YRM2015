@@ -23,15 +23,9 @@
 		// the entire speakers db.
 		if($_GET) {
 
-			// Check for the filter used
-			if($_GET['location']) {
-				$filter = $_GET['location'];
-				$filter_name = 'location';
-			}
-
-			elseif($_GET['subject']) {
+			if($_GET['subject']) {
 				$filter = $_GET['subject'];
-				$filter_name = 'subject';
+				$filter_name = 'subjects';
 			}
 			elseif ($_GET['getCount']) {
 				sendJson(array("count" => count($speakers), "status" => 200), function() {
@@ -49,14 +43,18 @@
 			$result = array();
 
 			for ($i=0; $i < count($speakers); $i++) { 
-				$filter_val = $speakers[$i][$filter_name];
+				if($filter_name === 'subjects') {
+					$filter_val = $speakers[$i][$filter_name];
+					for ($j=0; $j < count($filter_val); $j++) { 
 
-				// If the current filter value 
-				// equals the one in the DB
-				// then push the Object to the 
-				// response array.
-				if($filter_val === $filter) {
-					array_push($result, $speakers[$i]);
+						// If the current filter value 
+						// equals the one in the DB
+						// then push the Object to the 
+						// response array.
+						if($filter_val[$j] === $filter) {
+							array_push($result, $speakers[$i]);
+						}
+					}
 				}
 			}
 
