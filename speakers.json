@@ -37,7 +37,7 @@
 	{
 		"name": "Wilfrid Kendall",
 		"website": "http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/kendall/",
-		"subjects": ["Probability", "Stochastic Processes"],
+		"subjects": ["Probability and Stochastic Processes"],
 		"location": "Unversity of Warwick",
 		"img_url": "assets/img/speakers/wilfrid_kendall.png"
 	},
@@ -107,7 +107,7 @@
 	{
 		"name": "Daniela Kühn",
 		"website": "http://web.mat.bham.ac.uk/D.Kuehn/",
-		"subjects": ["Combinatorics", "Graph Theory"],
+		"subjects": ["Combinatorics and Graph Theory"],
 		"location": "University of Birmingham",
 		"img_url": "assets/img/speakers/daniela_kuhn.png"
 	},
