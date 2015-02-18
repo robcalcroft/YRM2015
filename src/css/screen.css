@@ -193,7 +193,7 @@ p {
 
 .separator {
   margin: 20px 0;
-  border-bottom: 1px solid #d3dada;
+  border-bottom: 1px solid #bfc8c9;
 }
 
 .faded {
@@ -367,7 +367,7 @@ nav .nav-right ul li {
 .container-common {
   position: relative;
   top: 100px;
-  color: #809395;
+  color: #6d8082;
   padding: 0 10vw;
 }
 
