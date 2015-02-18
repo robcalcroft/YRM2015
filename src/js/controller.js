@@ -56,6 +56,9 @@ YRM.controller.tasks = {
 				break;
 			case 'track':
 				YRM.controller.router.trackInit();
+				break
+			case 'schedule':
+				this.schedule();
 		}
 	},
 
@@ -129,6 +132,37 @@ YRM.controller.tasks = {
 
 			packet.callback ? packet.callback(speakers, packet.callbackParams) : null;
 		}) 
+	},
+
+	schedule: function() {
+
+		$.getJSON(YRM.globs.apiRoot + 'getSpeakers.php', function(speakers) {
+
+			var list = $('ul.schedule-track-list');
+			var speakersLen = speakers.length;
+
+			// Loop through the speakers adding each
+			// seperate track to the list
+			for (var i = speakersLen - 1; i >= 0; i--) {
+
+				// Sanity check
+				if(!speakers[i].subjects) continue;
+
+				var subjects = speakers[i].subjects;
+				var subjectsLen = subjects.length;
+
+				for (var j = subjectsLen - 1; j >= 0; j--) {
+
+					// Append the HTML with the track in
+					// onto the list on the schedule page
+					list.append(
+						"<li><a href='track#" + subjects[j].split(' ').join('-') + "'>" + subjects[j] +"</a>"
+					);
+				};
+			};
+
+		});
+
 	}
 }
 

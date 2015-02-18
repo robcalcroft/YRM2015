@@ -186,6 +186,10 @@ a:hover {
   border-bottom: 1px solid #e3324a;
 }
 
+.link-underline:hover, .schedule-track-list li a:hover {
+  text-decoration: underline;
+}
+
 p {
   padding: 5px 0;
   line-height: 27px;
@@ -464,4 +468,9 @@ nav .nav-right ul li {
 .register table td {
   font-weight: 300 !important;
   vertical-align: middle;
+}
+
+.schedule-track-list li {
+  padding: 0 0 5px 10px;
+  font-style: italic;
 }
