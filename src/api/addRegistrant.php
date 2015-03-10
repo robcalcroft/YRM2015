@@ -46,7 +46,7 @@
   $res = fgets($fp, 1024);
 
   if(!file_exists('../../db.json')) {
-    system('echo \'{"registrants":[]}\' > ../../db.json');
+    system('echo \'{"registrants":[], "accomodationGuests":[]}\' > ../../db.json');
   }
 
   if (strcmp ($res, "VERIFIED") !== false) {
@@ -60,6 +60,7 @@
     $transactionId = $_POST['txn_id'];
     $paymentStatus = $_POST['payment_status'];
     $verifySign    = $_POST['verify_sign'];
+    $itemName      = $_POST['item_name1'];
 
     // Create orderId
     $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('is') . substr($payerId, -3);
@@ -73,7 +74,8 @@
       'email'         => $email,
       'transactionId' => $transactionId,
       'paymentStatus' => $paymentStatus,
-      'verifySign'    => $verifySign
+      'verifySign'    => $verifySign,
+      'itemName'      => $itemName
     );
 
     $replyToEmail = "info@yrm2015.co.uk";
@@ -107,7 +109,7 @@
     
     // Checks to see if the order id exists
 
-    $ordIds = getOrderIds();
+    $ordIds = getRegistrantOrderIds();
 
     for ($i=0; $i < count($ordIds); $i++) { 
       if($orderId === $ordIds[$i]) {
@@ -118,7 +120,7 @@
 
     // Checks to see if the transaction id exists
 
-    $transactionIds = getTransactionIds();
+    $transactionIds = getRegistrantTransactionIds();
 
     for ($i=0; $i < count($transactionIds); $i++) { 
       if($transactionId === $transactionIds[$i]) {

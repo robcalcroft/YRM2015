@@ -5,7 +5,7 @@
 		if(!is_null($callback))$callback();
 	}
 
-	function getOrderIds() {
+	function getRegistrantOrderIds() {
 		$db = json_decode(file_get_contents('../../db.json'), true);
 
 		$registrants = $db['registrants'];
@@ -21,7 +21,23 @@
 		return $orderIds;
 	}
 
-	function getTransactionIds() {
+	function getAccomodationOrderIds() {
+		$db = json_decode(file_get_contents('../../db.json'), true);
+
+		$accomodationGuests = $db['accomodationGuests'];
+
+		$orderIds = array();
+
+		for ($i=0; $i < count($accomodationGuests); $i++) { 
+			
+			array_push($orderIds, $accomodationGuests[$i]['orderId']);
+
+		}
+
+		return $orderIds;
+	}
+
+	function getRegistrantTransactionIds() {
 		$db = json_decode(file_get_contents('../../db.json'), true);
 
 		$registrants = $db['registrants'];
@@ -31,6 +47,22 @@
 		for ($i=0; $i < count($registrants); $i++) { 
 			
 			array_push($transactionIds, $registrants[$i]['transactionId']);
+
+		}
+
+		return $transactionIds;
+	}
+
+	function getAccomodationTransactionIds() {
+		$db = json_decode(file_get_contents('../../db.json'), true);
+
+		$accomodationGuests = $db['accomodationGuests'];
+
+		$transactionIds = array();
+
+		for ($i=0; $i < count($accomodationGuests); $i++) { 
+			
+			array_push($transactionIds, $accomodationGuests[$i]['transactionId']);
 
 		}
 

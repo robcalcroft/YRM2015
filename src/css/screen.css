@@ -469,6 +469,9 @@ nav .nav-right ul li {
   font-weight: 300 !important;
   vertical-align: middle;
 }
+.register table td form {
+  height: 40px;
+}
 
 .schedule-track-list li {
   padding: 0 0 5px 10px;

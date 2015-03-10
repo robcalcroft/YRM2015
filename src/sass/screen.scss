@@ -350,6 +350,10 @@ nav {
 		td {
 			font-weight: 300 !important; 
 			vertical-align: middle;
+			form {
+				// Stops the form ruining the view
+				height: 40px;
+			}
 		}
 	}
 }
