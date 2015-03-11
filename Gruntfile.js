@@ -138,7 +138,7 @@ module.exports = function(grunt) {
           authPath: '../.ftppass'
         },
         src: 'build/',
-        dest: '/httpdocs/dev/',
+        dest: '/httpdocs/',
         exclusions: ['build/.DS_Store']
       }
     }
