@@ -30,10 +30,11 @@
 	$registrants = json_decode(file_get_contents($db_file), true)['registrants'];
 	$responseArr = array();
 	for ($i=0; $i < count($registrants); $i++) { 
-		$fname = $registrants[$i]['firstName'];
-		$sname = substr($registrants[$i]['lastName'], 0,1);
-		$fin   = $fname . " " . $sname;
-		array_push($responseArr, $fin);
+		// $fname = $registrants[$i]['firstName'];
+		// $sname = substr($registrants[$i]['lastName'], 0,1);
+		// $fin   = $fname . " " . $sname;
+		$l = 'Participant';
+		array_push($responseArr, $l);
 	}
 	sendJson($responseArr,null);
 

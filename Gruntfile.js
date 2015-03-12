@@ -123,7 +123,7 @@ module.exports = function(grunt) {
       misc: {
         expand: true, 
         dot: true,
-        src: ['.htaccess'], 
+        src: ['.htaccess', 'api/.htaccess'], 
         dest: 'build/',
         cwd: 'src/'
       }
