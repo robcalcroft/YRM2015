@@ -17,8 +17,8 @@ YRM.views = {
 							"<li><a href='sponsors'>Sponsors</a></li>"+
 							//"<li><a href='participants'>Participants</a></li>"+
 							"<li><a href='past-yrms'>Past YRMs</a>"+
+							"<li><a href='committee-contacts'>Committee and Contacts</a>"+
 							"<li><a href='faqs'>FAQs</a></li>"+
-							"<li><a href='contact'>Contact</a></li>"+
 						"</ul>";
 
 		$('#nav-more').tooltipster({
