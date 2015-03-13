@@ -139,7 +139,8 @@ module.exports = function(grunt) {
         },
         src: 'build/',
         dest: '/httpdocs/',
-        exclusions: ['build/.DS_Store']
+        exclusions: ['build/.DS_Store'],
+        forceVerbose: true
       }
     }
   });
