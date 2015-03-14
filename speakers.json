@@ -112,6 +112,13 @@
 		"img_url": "assets/img/speakers/daniela_kuhn.png"
 	},
 	{
+		"name": "Vicky Neale",
+		"website": "http://web.mat.bham.ac.uk/D.Kuehn/",
+		"other": "LMS Public Lecture",
+		"location": "University of Oxford",
+		"img_url": "assets/img/speakers/neale.jpg"
+	},
+	{
 		"name": "Frances Kirwan",
 		"website": "http://www.maths.ox.ac.uk/people/frances.kirwan",
 		"other": "Plenary Speaker",
