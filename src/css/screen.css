@@ -443,10 +443,15 @@ nav .nav-right ul li {
 
 .faqs {
   padding-top: 20px;
-  font-size: 17.5pt;
+  font-size: 12.5pt;
 }
-.faqs .faq-q, .faqs .faq-a {
-  padding: 5px 0;
+.faqs .faq-q {
+  padding-top: 15px;
+  padding-bottom: 4px;
+}
+.faqs .faq-a {
+  padding-top: 4px;
+  padding-bottom: 15px;
 }
 .faqs .faq-a {
   padding-left: 3px;
@@ -454,7 +459,7 @@ nav .nav-right ul li {
 
 .register table {
   border-collapse: collapse;
-  width: 55%;
+  width: 100%;
   border: 1px solid #d0d5d5;
 }
 .register table th, .register table td {

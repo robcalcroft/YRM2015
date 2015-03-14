@@ -322,9 +322,14 @@ nav {
 
 .faqs {
 	padding-top: 20px;
-	font-size: 17.5pt;
-	.faq-q, .faq-a {
-		padding: 5px 0;
+	font-size: 12.5pt;
+	.faq-q {
+		padding-top: 15px;
+		padding-bottom: 4px;
+	}
+	.faq-a {
+		padding-top: 4px;
+		padding-bottom: 15px;
 	}
 	.faq-a {
 		padding-left: 3px;
