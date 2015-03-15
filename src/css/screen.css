@@ -81,24 +81,24 @@ textarea {
 	Common CSS
 ***************************/
 h1 {
-  color: #6c797a;
+  color: #3c4344;
   font-size: 30pt;
   padding-bottom: 20px;
 }
 
 h2 {
-  color: #6c797a;
+  color: #3c4344;
   font-size: 22.5pt;
 }
 
 h3 {
-  color: #7f8c8d;
+  color: #4e5758;
   font-weight: bold;
   font-size: 20pt;
 }
 
 h4 {
-  color: #7f8c8d;
+  color: #4e5758;
   font-weight: bold;
   font-size: 17.5pt;
   padding: 10px 0;
@@ -163,7 +163,7 @@ input {
   border: 0;
   font-size: 12pt;
   display: block;
-  color: #7f8c8d;
+  color: #4e5758;
 }
 
 a {
@@ -197,7 +197,7 @@ p {
 
 .separator {
   margin: 20px 0;
-  border-bottom: 1px solid #bfc8c9;
+  border-bottom: 1px solid #6d8082;
 }
 
 .faded {
@@ -371,7 +371,7 @@ nav .nav-right ul li {
 .container-common {
   position: relative;
   top: 100px;
-  color: #6d8082;
+  color: #272e2e;
   padding: 0 10vw;
 }
 
@@ -461,15 +461,15 @@ nav .nav-right ul li {
 .register table {
   border-collapse: collapse;
   width: 100%;
-  border: 1px solid #d0d5d5;
+  border: 1px solid #9aa4a5;
 }
 .register table th, .register table td {
-  border: 1px solid #d0d5d5;
+  border: 1px solid #9aa4a5;
   padding: 4px 10px;
 }
 .register table th {
   font-weight: 400;
-  color: #4e5758;
+  color: #1e2222;
 }
 .register table td {
   font-weight: 300 !important;

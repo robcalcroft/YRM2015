@@ -9,8 +9,8 @@
 $main-colour: rgb(0,33,71);
 $main-colour-light: lighten($main-colour, 5%);
 $text-contrast-colour: white;
-$text-main-colour: #7f8c8d;
-$text-main-colour-light: darken(#95a5a6, 15%);
+$text-main-colour: darken(#7f8c8d, 20%);
+$text-main-colour-light: darken(#95a5a6, 45%);
 $text-title-colour: darken($text-main-colour, 7.5%);
 $text-blue-colour: $main-colour-light;
 $background-colour: #ecf0f1;
