@@ -310,6 +310,27 @@ nav {
 	}
 }
 
+.committee-headshots { 
+	@extend .speaker-headshots;
+	.committee-headshot {
+		@extend .speaker-headshot;
+		div:not(.committee-headshot-pic) {
+			padding-bottom: .5em;
+		}
+		.committee-headshot-pic {
+			@extend .speaker-headshot-pic;
+		}
+		.committee-headshot-name {
+			font-size: 130%;
+			padding-top: 10px;
+			@extend .committee-headshot-name;
+		}
+		.committee-headshot-role {
+			color: lighten($text-main-colour-light, 30%);
+		}
+	}
+}
+
 .participant-list {
 	padding-top: 25px;
 	font-size: 17.5pt;
