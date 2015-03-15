@@ -384,6 +384,7 @@ nav .nav-right ul li {
   width: 17.5%;
   margin: 1.75em 0;
   margin-right: 2.5em;
+  height: 250px;
   /* Media queries for responsive image grid */
 }
 .speaker-headshots .speaker-headshot div:not(.speaker-headshot-pic) {
