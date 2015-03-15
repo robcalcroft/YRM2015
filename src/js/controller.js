@@ -5,7 +5,7 @@ var YRM = YRM || {};
 YRM.controller = {};
 
 YRM.globs = {
-	apiRoot: '/api/',
+	apiRoot: '/YRM2015/build/api/',
 	speakerCount: 14,
 	eventLength: 4
 };
