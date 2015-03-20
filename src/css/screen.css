@@ -212,6 +212,10 @@ p {
   font-weight: 400;
 }
 
+.centre {
+  text-align: center;
+}
+
 .full_width, .home {
   width: 100vw;
 }
