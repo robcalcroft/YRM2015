@@ -5,7 +5,7 @@ var YRM = YRM || {};
 YRM.controller = {};
 
 YRM.globs = {
-	apiRoot: '/YRM2015/build/api/',
+	apiRoot: '/api/',
 	speakerCount: 14,
 	eventLength: 4
 };
@@ -59,6 +59,8 @@ YRM.controller.tasks = {
 				break
 			case 'schedule':
 				this.schedule();
+			case 'registration':
+				this.registration();
 		}
 	},
 
@@ -163,6 +165,18 @@ YRM.controller.tasks = {
 
 		});
 
+	},
+
+	registration: function() {
+		$.getJSON(YRM.globs.apiRoot + 'getConferenceDinnerCount.php', function(res) {
+			var state = res.status, count = res.count;
+
+			if(count > 100) {
+				YRM.views.renderDinnerText(0, 0);
+			} else {
+				YRM.views.renderDinnerText(1, 100 - count);
+			}
+		})
 	}
 }
 

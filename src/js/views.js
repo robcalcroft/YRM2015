@@ -109,5 +109,15 @@ YRM.views = {
 				trackSpeaker.append(speakers[i].name + " from " + speakers[i].location);
 		};
 
+	},
+
+	renderDinnerText: function(state, count) {
+		var el = $('#dinner-text');
+
+		if(state) {
+			el.append('Currently there are ' + count + ' places avaliable');
+		} else {
+			el.append('Currently no places are available, but we hope to release more places soon. Buy this item to add your name to the waiting list.')
+		}
 	}
 }

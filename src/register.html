@@ -1,6 +1,6 @@
 {{header}}
 {{nav.opaque}}
-<div class="container-common">
+<div class="container-common" id='registration'>
 	<h1>Payment</h1>
 	<p>
 		Click on the PayPal button below to purchase your ticket for YRM2015. Once you've paid you'll recieve an email from PayPal and an email from us confirming your ticket. It will contain your order ID which we'll use to identify you on any communication with us so please keep it safe.
@@ -8,12 +8,6 @@
 	<p>
 		<p>
 			We encourage participants to give a 15 minute talk on their research if possible. We will email you a link to submit a talk title and abstract. This will also enable you to enter our poster competition. If you want to talk or present a poster you must submit this information by the end of Friday 3rd July.
-		</p>
-		<p>
-			Please note accommodation can only be purchased by YRM2015 conference attendees.
-		</p>
-		<p class="italic text-bold">
-			Update: attendees at the <a href="https://sites.google.com/site/bmcbamc15/">BMC&#47;BAMC</a> can have their registration fee refunded if they attend YRM2015. <a href="bmcbamc">See details</a>.
 		</p>
 	</p>
 	<p class='italic'>
@@ -28,24 +22,12 @@
 				<th>Pay</th>
 			</tr>
 			<tr>
-				<td>YRM2015 - Registration Only</td>
+				<td>YRM2015 - Registration</td>
 				<td>£60</td>
 				<td>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="9AW8E3KM68GH8">
-						<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_pp_142x27.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-						<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-					</form>
-				</td>
-			</tr>
-			<tr>
-				<td>YRM2015 - Registration and Conference Dinner</td>
-				<td>£60</td>
-				<td>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="KK2GWXSHD6MMN">
 						<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_pp_142x27.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 						<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 					</form>
@@ -70,7 +52,23 @@
 					</form>
 				</td>
 			</tr>
+			<tr>
+				<td>YRM2015 - Conference Dinner <br><br> <span id="dinner-text"></span></td>
+				<td>£0.01</td>
+				<td>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="height:120px !important;">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="KK2GWXSHD6MMN">
+						<table>
+						<tr><td><input type="hidden" name="on0" value="Dietary requirements:">Dietary requirements:</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
+						</table>
+						<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_pp_142x27.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</td>
+			</tr>
 		</table>
+		<p class='italic'>Please note accommodation and dinner can only be purchased by YRM2015 conference attendees.</p>
 	</div>
 </div>
 {{footer}}
