@@ -37,6 +37,28 @@
 		return $orderIds;
 	}
 
+	function getConferenceDinnerOrderIds() {
+		$db = json_decode(file_get_contents('../../db.json'), true);
+
+		$conferenceDinner = $db['conferenceDinner'];
+
+		$orderIds = array();
+
+		for ($i=0; $i < count($conferenceDinner); $i++) { 
+			
+			array_push($orderIds, $conferenceDinner[$i]['orderId']);
+
+		}
+
+		return $orderIds;
+	}
+
+	function countConferenceDinner() {
+		$db = json_decode(file_get_contents('../../db.json'), true);
+
+		return count($db['conferenceDinner']);
+	}
+
 	function getRegistrantTransactionIds() {
 		$db = json_decode(file_get_contents('../../db.json'), true);
 
@@ -63,6 +85,22 @@
 		for ($i=0; $i < count($accomodationGuests); $i++) { 
 			
 			array_push($transactionIds, $accomodationGuests[$i]['transactionId']);
+
+		}
+
+		return $transactionIds;
+	}
+
+	function getConferenceDinnerTransactionIds() {
+		$db = json_decode(file_get_contents('../../db.json'), true);
+
+		$conferenceDinner = $db['conferenceDinner'];
+
+		$transactionIds = array();
+
+		for ($i=0; $i < count($conferenceDinner); $i++) { 
+			
+			array_push($transactionIds, $conferenceDinner[$i]['transactionId']);
 
 		}
 
