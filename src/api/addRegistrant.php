@@ -46,7 +46,7 @@
   $res = fgets($fp, 1024);
 
   if(!file_exists('../../db.json')) {
-    system('echo \'{"registrants":[], "accomodationGuests":[]}\' > ../../db.json');
+    system('echo \'{"registrants":[], "accomodationGuests":[], "conferenceDinner":[]"}\' > ../../db.json');
   }
 
   if (strcmp ($res, "VERIFIED") !== false) {
