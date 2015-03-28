@@ -63,11 +63,11 @@
 		"img_url": "assets/img/speakers/kostas_kardaras.png"
 	},
 	{
-		"name": "James Robinson",
-		"website": "http://www2.warwick.ac.uk/fac/sci/maths/people/staff/james_robinson/",
+		"name": "Jonthan Fraser",
+		"website": "http://personalpages.manchester.ac.uk/staff/jonathan.fraser/",
 		"subjects": ["Dynamical Systems"],
-		"location": "University of Warwick",
-		"img_url": "assets/img/speakers/james_robinson.png"
+		"location": "University of Manchester",
+		"img_url": "assets/img/speakers/jonathan_fraser.JPG"
 	},
 	{
 		"name": "Constantin Telemann",
