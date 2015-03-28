@@ -390,6 +390,8 @@ nav {
 	li {
 		padding: 0 0 5px 10px;
 		font-style: italic;
+		float: left;
+		width: 50%;
 		a {
 			@extend .link-underline;
 		}

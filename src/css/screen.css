@@ -497,4 +497,6 @@ nav .nav-right ul li {
 .schedule-track-list li {
   padding: 0 0 5px 10px;
   font-style: italic;
+  float: left;
+  width: 50%;
 }
