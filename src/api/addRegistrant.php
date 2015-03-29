@@ -33,12 +33,12 @@
   	// Set up the acknowledgement request headers
 	$header  = "POST /cgi-bin/webscr HTTP/1.1\r\n";
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
-	$header .= "Host: www.sandbox.paypal.com:443\r\n";
+	$header .= "Host: www.paypal.com:443\r\n";
 	$header .= "Content-Length: " . strlen($req) . "\r\n"; 
 	$header .= "Connection: close\r\n\r\n";
 
   	// Open a socket for the acknowledgement request
-  $fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+  $fp = fsockopen('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 
 	// Send the HTTP POST request back to PayPal for validation
   fputs($fp, $header . $req);
@@ -62,6 +62,7 @@
     $verifySign    = $_POST['verify_sign'];
     $itemName      = $_POST['item_name'];
     $itemID        = $_POST['item_number'];
+    $resarchArea   = $_POST['option_selection1'];
 
     // Create orderId
     $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('is') . substr($payerId, -3);
@@ -77,7 +78,8 @@
       'paymentStatus' => $paymentStatus,
       'verifySign'    => $verifySign,
       'itemName'      => $itemName,
-      'itemID'        => $itemID
+      'itemID'        => $itemID,
+      'researchArea'  => $researchArea
     );
 
     $replyToEmail = "info@yrm2015.co.uk";
@@ -145,7 +147,7 @@
       }
     } else {
 
-      mail($_POST['payer_email'], "YRM2015 Ticket Confirmation", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+      mail($_POST['payer_email'], "YRM2015 Ticket Confirmation", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nWe hope you will be able to give a short talk on your research. To do this, you will need to complete the form at http://goo.gl/forms/4SlGcxF6fN no later than Friday 3rd July. This form also enables you to enter our poster competition.\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
     }
 
   } 

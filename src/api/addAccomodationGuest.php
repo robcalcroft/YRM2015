@@ -33,12 +33,12 @@
   	// Set up the acknowledgement request headers
 	$header  = "POST /cgi-bin/webscr HTTP/1.1\r\n";
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
-	$header .= "Host: www.sandbox.paypal.com:443\r\n";
+	$header .= "Host: www.paypal.com:443\r\n";
 	$header .= "Content-Length: " . strlen($req) . "\r\n"; 
 	$header .= "Connection: close\r\n\r\n";
 
   	// Open a socket for the acknowledgement request
-  $fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+  $fp = fsockopen('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 
 	// Send the HTTP POST request back to PayPal for validation
   fputs($fp, $header . $req);
