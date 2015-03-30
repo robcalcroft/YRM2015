@@ -148,9 +148,9 @@
     } else {
       $count = countConferenceDinner();
       if($count <= 99) {
-        mail($_POST['payer_email'], "YRM2015 Conference Dinner Confirmation", "Hi, $firstName\r\n\r\nWe can confirm that you have a place at the conference dinner option at YRM2015. Your dietary preferences are: $dietaryPreferences\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        mail($_POST['payer_email'] . ', rob@calcroft.com', "YRM2015 Conference Dinner Confirmation", "Hi, $firstName\r\n\r\nWe can confirm that you have a place at the conference dinner option at YRM2015. Your dietary preferences are: $dietaryPreferences\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
       } else {
-        mail($_POST['payer_email'], "YRM2015 Conference Dinner Confirmation", "Hi, $firstName\r\n\r\nAt present the conference dinner option at YRM2015 is fully booked. We hope to release more places soon, and we can confirm that you are on the waiting list. Your dietary preferences are: $dietaryPreferences\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+        mail($_POST['payer_email'] . ', rob@calcroft.com', "YRM2015 Conference Dinner Confirmation", "Hi, $firstName\r\n\r\nAt present the conference dinner option at YRM2015 is fully booked. We hope to release more places soon, and we can confirm that you are on the waiting list. Your dietary preferences are: $dietaryPreferences\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
       }
     }
 

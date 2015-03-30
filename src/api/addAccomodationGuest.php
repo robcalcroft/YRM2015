@@ -145,7 +145,7 @@
       }
     } else {
 
-      mail($_POST['payer_email'], "YRM2015 Accomodation Confirmation", "Hi, $firstName\r\n\r\nThanks for buying accomodation for YRM2015. ItemID: $accomodationID\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
+      mail($_POST['payer_email'] . ', rob@calcroft.com', "YRM2015 Accomodation Confirmation", "Hi, $firstName\r\n\r\nThanks for buying accomodation for YRM2015. ItemID: $accomodationID\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail");
     }
 
   } 
