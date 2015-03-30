@@ -33,6 +33,10 @@ YRM.views = {
 	animateCounters: function(element, length) {
 		var counter = 0, num;
 
+		if(length === 0) {
+			return false;
+		}
+
 		(function count() {
 			num = parseInt(element.html())
 			element.html(++num);
