@@ -45,7 +45,6 @@ textarea {
 	font-family: 'Lato', sans-serif;
 }
 
-
 /***************************
 	Common CSS
 ***************************/
@@ -152,6 +151,7 @@ body {
 $nav-height: 75px;
 nav {
 	position: fixed;
+	min-width: 785px;
 	z-index: 10;
 	display: table;
 	width: 100vw;
@@ -178,6 +178,9 @@ nav {
 
 			}
 		}
+	}
+	@media screen and (max-width: 785px) {
+		position: absolute;
 	}
 }
 /* Nav Override Class */
@@ -218,6 +221,7 @@ nav {
 .home {
 	@extend .full_width;
 	@extend .full_height;
+	min-width: 785px;
 	text-align: center;
 	color: $text-contrast-colour;
 	// BG CONFIG
@@ -262,6 +266,7 @@ nav {
 }
 
 .container-common {
+	min-width: 785px;
 	position: relative;
 	top: $nav-height + 25px;
 	color: $text-main-colour-light;

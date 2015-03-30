@@ -252,6 +252,7 @@ body {
 /* Navigation Bar */
 nav {
   position: fixed;
+  min-width: 785px;
   z-index: 10;
   display: table;
   width: 100vw;
@@ -277,6 +278,11 @@ nav .nav-right {
 nav .nav-right ul li {
   display: inline;
   padding: 0 .75vw;
+}
+@media screen and (max-width: 785px) {
+  nav {
+    position: absolute;
+  }
 }
 
 /* Nav Override Class */
@@ -320,6 +326,7 @@ nav .nav-right ul li {
 }
 
 .home {
+  min-width: 785px;
   text-align: center;
   color: white;
   position: relative;
@@ -373,6 +380,7 @@ nav .nav-right ul li {
 }
 
 .container-common {
+  min-width: 785px;
   position: relative;
   top: 100px;
   color: #272e2e;
