@@ -501,6 +501,12 @@ nav .nav-right ul li {
 .register table td form {
   height: 40px;
 }
+.register form table {
+  border: none;
+}
+.register form table th, .register form table td {
+  border: none;
+}
 
 .schedule-track-list li {
   padding: 0 0 5px 10px;
