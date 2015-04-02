@@ -93,8 +93,8 @@ YRM.controller.tasks = {
 		$.getJSON(YRM.globs.apiRoot + 'getRegistrants.php', function(participants) {
 			var anCntrs = YRM.views.animateCounters;
 
-			// Participant Number
-			anCntrs($('#participant-no'), participants.length);
+			// Participant Number (23 extra to compensate for speakers etc)
+			anCntrs($('#participant-no'), participants.length + 23);
 
 			// Speaker Number
 			anCntrs($('#speaker-no'), YRM.globs.speakerCount);
