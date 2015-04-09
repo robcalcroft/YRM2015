@@ -2,7 +2,7 @@
 
 The homepage for the 2015 Young Researchers in Mathematics conference held at Oxford University
 
-The live site is [hosted here](http://yrm2015.co.uk)
+The site is [hosted here](http://yrm2015.co.uk)
 
 ---
 ###Installation
@@ -25,4 +25,4 @@ To build a debug version of the project run `grunt debug`.
 
 
 ###Running
-You can use the included NodeJS server to view the web pages -  `npm start`. However for the API to function you will need a webserver running PHP5.
+You will need a web server running PHP5 for the API.
