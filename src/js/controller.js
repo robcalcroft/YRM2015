@@ -32,16 +32,16 @@ YRM.controller.common = {
 	},
 
 
-}
+};
 YRM.controller.tasks = {
 
 	/**
-	 * The central runner for the tasks 
+	 * The central runner for the tasks
 	 * for various pages
 	 */
 	runner: function() {
 		var page = $('.container-common')[0]?$('.container-common')[0].id:undefined || $('.home')[0].id;
-		
+
 		// Switch the id of the current container
 		// to find out which task to run.
 		switch(page) {
@@ -56,17 +56,18 @@ YRM.controller.tasks = {
 				break;
 			case 'track':
 				YRM.controller.router.trackInit();
-				break
+				break;
 			case 'schedule':
 				this.schedule();
+				break;
 			case 'registration':
 				this.registration();
 		}
 	},
 
 	/**
-	 * Request the names from the API 
-	 * and pass each one to the 
+	 * Request the names from the API
+	 * and pass each one to the
 	 * rendering function in the views.
 	 */
 	participants: function() {
@@ -75,13 +76,13 @@ YRM.controller.tasks = {
 			// If there are no participants
 			// then display an alternate string
 			if(participants.length === 0) {
-				YRM.views.renderParticipants(null, true)
+				YRM.views.renderParticipants(null, true);
 				return;
 			}
 			for (var i = participants.length - 1; i >= 0; i--) {
-				YRM.views.renderParticipants(participants[i])
+				YRM.views.renderParticipants(participants[i]);
 			};
-		})
+		});
 	},
 
 	/**
@@ -104,9 +105,9 @@ YRM.controller.tasks = {
 
 		})
 		.error(function(err) {
-			$('#participant-no').html('a lot')
-			YRM.views.animateCounters($('#speaker-no'), YRM.globs.speakerCount)
-			YRM.views.animateCounters($('#day-no'), YRM.globs.eventLength)
+			$('#participant-no').html('a lot');
+			YRM.views.animateCounters($('#speaker-no'), YRM.globs.speakerCount);
+			YRM.views.animateCounters($('#day-no'), YRM.globs.eventLength);
 		})
 
 	},
@@ -124,7 +125,7 @@ YRM.controller.tasks = {
 		$.getJSON(YRM.globs.apiRoot + 'getSpeakers.php' + filter, function(speakers) {
 
 			for (var i = speakers.length - 1; i >= 0; i--) {
-				
+
 				// For each speaker, render the speaker
 				YRM.views.renderSpeakers(speakers[i]);
 
@@ -133,7 +134,7 @@ YRM.controller.tasks = {
 			packet.callbackParams = packet.callbackParams || {};
 
 			packet.callback ? packet.callback(speakers, packet.callbackParams) : null;
-		}) 
+		})
 	},
 
 	schedule: function() {
@@ -171,7 +172,7 @@ YRM.controller.tasks = {
 		$.getJSON(YRM.globs.apiRoot + 'getConferenceDinnerCount.php', function(res) {
 			var state = res.status, count = res.count;
 
-			if(count > 100) {
+			if(count > 146) {
 				YRM.views.renderDinnerText(0, 0);
 			} else {
 				YRM.views.renderDinnerText(1, 100 - count);
@@ -183,12 +184,12 @@ YRM.controller.tasks = {
 YRM.controller.router = {
 
 	trackInit: function() {
-		
+
 		// Get the track name using the hash
 		var track = document.location.hash.replace("#", "");
 
 		// Split by - to get each word
-		var trackWords    = track.split("-"), 
+		var trackWords    = track.split("-"),
 			trackWordsLen = trackWords.length,
 			exceptionWords;
 
@@ -206,14 +207,13 @@ YRM.controller.router = {
 		YRM.controller.tasks.speakers({
 			filter: trackWordsJoined,
 			callbackParams: trackWords.join(' '),
-			callback: YRM.views.track	
+			callback: YRM.views.track
 		});
 
 		window.addEventListener('hashchange', function() {
 			document.location.reload();
-		})
+		});
 
 	}
 
-}
-
+};
