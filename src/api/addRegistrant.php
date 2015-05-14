@@ -3,7 +3,7 @@
    * Catches the IPN request from PayPal and adds the user
    * to the database.
    */
-  
+
   date_default_timezone_set("Europe/London");
 
   require('utils.php');
@@ -13,18 +13,18 @@
   // Processing Error - DB file was in use when request was made
   // Invalid Purchase - Non verified request come through
   // Ticket Confirmation - Payment is complete and has been recorded in the database
-  
+
   // Add line here to ensure the reciever email matches this
   // to confirm the $ has come through to us not someone else
   $payPalEmail = "";
 
-	// Send an empty HTTP 200 OK response to acknowledge receipt of the notification 
-  header('HTTP/1.1 200 OK'); 
+	// Send an empty HTTP 200 OK response to acknowledge receipt of the notification
+  header('HTTP/1.1 200 OK');
 
 	// Build the required acknowledgement message out of the notification just received
-  $req = 'cmd=_notify-validate';               
+  $req = 'cmd=_notify-validate';
 
-	  
+
 	foreach ($_POST as $key => $value) {
 	   $value = urlencode(stripslashes($value));
 	   $req  .= "&$key=$value";
@@ -34,7 +34,7 @@
 	$header  = "POST /cgi-bin/webscr HTTP/1.1\r\n";
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 	$header .= "Host: www.paypal.com:443\r\n";
-	$header .= "Content-Length: " . strlen($req) . "\r\n"; 
+	$header .= "Content-Length: " . strlen($req) . "\r\n";
 	$header .= "Connection: close\r\n\r\n";
 
   	// Open a socket for the acknowledgement request
@@ -53,7 +53,7 @@
 
     // Get POST data
     $payerId       = $_POST['payer_id'];
-    $date          = $_POST['payment_date'];         
+    $date          = $_POST['payment_date'];
     $firstName     = $_POST['first_name'];
     $lastName      = $_POST['last_name'];
     $email         = $_POST['payer_email'];
@@ -63,6 +63,10 @@
     $itemName      = $_POST['item_name'];
     $itemID        = $_POST['item_number'];
     $resarchArea   = $_POST['option_selection1'];
+
+    if($paymentStatus == "Refunded") {
+        exit(0);
+    }
 
     // Create orderId
     $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('is') . substr($payerId, -3);
@@ -98,7 +102,7 @@
 
         // Add new data to database
         array_push($db['registrants'], $newRegistrant);
-        
+
         // Rewrite and reencode the database file
         fwrite($db_file, json_encode($db));
 
@@ -110,12 +114,12 @@
         return false;
       }
     }
-    
+
     // Checks to see if the order id exists
 
     $ordIds = getRegistrantOrderIds();
 
-    for ($i=0; $i < count($ordIds); $i++) { 
+    for ($i=0; $i < count($ordIds); $i++) {
       if($orderId === $ordIds[$i]) {
         mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the order ID has already been used. Please get in contact so we can investigate this and quote your order ID: $orderId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail\r\nBcc: rob@calcroft.com");
         exit();
@@ -126,7 +130,7 @@
 
     $transactionIds = getRegistrantTransactionIds();
 
-    for ($i=0; $i < count($transactionIds); $i++) { 
+    for ($i=0; $i < count($transactionIds); $i++) {
       if($transactionId === $transactionIds[$i]) {
         mail($_POST['payer_email'], "YRM2015 Payment Error", "Hi, $firstName\r\n\r\nWe have recieved a payment notification from PayPal for your YRM2015 ticket, however it looks like the transaction ID has already been used. This could mean your payment has come through twice in which case please check PayPal have not charged you twice. If this is the first email you have recieved from YRM2015, please get in contact so we can investigate this and quote your order ID: $transactionId. You can reply to this email to report this error.\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail\r\nBcc: rob@calcroft.com");
         exit();
@@ -150,7 +154,7 @@
       mail($_POST['payer_email'], "YRM2015 Ticket Confirmation", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nWe hope you will be able to give a short talk on your research. To do this, you will need to complete the form at http://goo.gl/forms/4SlGcxF6fN no later than Friday 3rd July. This form also enables you to enter our poster competition.\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail\r\nBcc: rob@calcroft.com");
     }
 
-  } 
+  }
 
   else if (strcmp ($res, "INVALID") !== false) {
 

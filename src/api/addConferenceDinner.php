@@ -64,6 +64,10 @@
     $itemId             = $_POST['item_number'];
     $dietaryPreferences = $_POST['option_selection1'];
 
+    if($paymentStatus == "Refunded") {
+        exit(0);
+    }
+
     // Create orderId
     $orderId = date('Y') * 5 . substr($payerId, 0, 3) . date('is') . substr($payerId, -3);
 
