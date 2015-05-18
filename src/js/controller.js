@@ -18,7 +18,7 @@ YRM.controller.common = {
 	 */
 	init: function() {
 		var me = this;
-		$(document).ready(function(){
+		$(document).ready(function() {
 			YRM.controller.tasks.runner();
 			YRM.controller.common.runner();
 		});
@@ -175,7 +175,7 @@ YRM.controller.tasks = {
 			if(count > 146) {
 				YRM.views.renderDinnerText(0, 0);
 			} else {
-				YRM.views.renderDinnerText(1, 100 - count);
+				YRM.views.renderDinnerText(1, 146 - count);
 			}
 		})
 	}
