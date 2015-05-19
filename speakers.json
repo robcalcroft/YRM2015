@@ -117,5 +117,12 @@
 		"other": "Plenary Speaker",
 		"location": "University of Oxford",
 		"img_url": "assets/img/speakers/frances_kirwan.png"
+	},
+	{
+		"name": "Cyrille Mathis",
+		"other": "Mathematics as a living language",
+		"location": "ThinkTank Maths Limited",
+		"website": "http://thinktankmaths.com",
+		"img_url": "assets/img/speakers/cyrille_mathis.jpg"
 	}
 ]
