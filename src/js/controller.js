@@ -6,7 +6,7 @@ YRM.controller = {};
 
 YRM.globs = {
 	apiRoot: '/YRM2015/build/api/',
-	speakerCount: 17,
+	speakerCount: 18,
 	eventLength: 4
 };
 
@@ -116,7 +116,7 @@ YRM.controller.tasks = {
 
 		// Check to see if a packet has been
 		// passed in to the func
-		var packet = packet || {};
+		packet = packet || {};
 
 		// If there is a filter set up the var
 		// for use in the API call
@@ -129,7 +129,7 @@ YRM.controller.tasks = {
 				// For each speaker, render the speaker
 				YRM.views.renderSpeakers(speakers[i]);
 
-			};
+			}
 
 			packet.callbackParams = packet.callbackParams || {};
 
@@ -161,8 +161,8 @@ YRM.controller.tasks = {
 					list.append(
 						"<li><a href='track#" + subjects[j].split(' ').join('-') + "'>" + subjects[j] +"</a>"
 					);
-				};
-			};
+				}
+			}
 
 		});
 
@@ -177,9 +177,9 @@ YRM.controller.tasks = {
 			} else {
 				YRM.views.renderDinnerText(1, 146 - count);
 			}
-		})
+		});
 	}
-}
+};
 
 YRM.controller.router = {
 
