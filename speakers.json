@@ -1,128 +1,162 @@
 [
-	{
-		"name": "Barbara Niethammer",
-		"website": "http://www.hcm.uni-bonn.de/people/profile/barbara-niethammer/",
-		"subjects": ["PDEs", "Analysis"],
-		"location": "Universität Bonn",
-		"img_url": "assets/img/speakers/barbra_niethammer.png"
-	},
-	{
-		"name": "Carola-Bibiane Schoenlieb",
-		"website": "http://www.damtp.cam.ac.uk/people/c.b.schoenlieb/",
-		"subjects": ["Numerical Analysis"],
-		"location": "University of Cambridge",
-		"img_url": "assets/img/speakers/carola-bibiane_schoenlieb.png"
-	},
-	{
-		"name": "Steffen Grunewalder",
-		"website": "http://www.lancaster.ac.uk/maths/about-us/people/steffen-grunewalder",
-		"subjects": ["Machine Learning"],
-		"location": "Lancaster University",
-		"img_url": "assets/img/speakers/steffen_grunewalder.png"
-	},
-	{
-		"name": "Frank Smith",
-		"website": "http://www.ucl.ac.uk/maths/frank-smith",
-		"subjects": ["Fluid Mechanics"],
-		"location": "University College London (UCL)",
-		"img_url": "assets/img/speakers/frank_smith.png"
-	},
-	{
-		"name": "Wilfrid Kendall",
-		"website": "http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/kendall/",
-		"subjects": ["Probability and Stochastic Processes"],
-		"location": "Unversity of Warwick",
-		"img_url": "assets/img/speakers/wilfrid_kendall.png"
-	},
-	{
-		"name": "Simon Tavaré",
-		"website": "http://www.damtp.cam.ac.uk/user/st321/CRUK_CI.html",
-		"subjects": ["Statistics", "Computational Biology"],
-		"location": "University of Cambridge",
-		"img_url": "assets/img/speakers/simon_tavare.png"
-	},
-	{
-		"name": "Martine Ben Amar",
-		"website": "http://www.phys.ens.fr/~benamar/benamar_en.php",
-		"subjects": ["Mathematical Biology", "Mathematical Physics"],
-		"location": "École Normale Supérieure",
-		"img_url": "assets/img/speakers/martine_ben_amar.png"
-	},
-	{
-		"name": "Martin Hyland",
-		"website": "https://www.dpmms.cam.ac.uk/~martin/",
-		"subjects": ["Logic and Set Theory", "Computer Science"],
-		"location": "University of Cambridge",
-		"img_url": "assets/img/speakers/martin_hyland.png"
-	},
-	{
-		"name": "Kostas Kardaras",
-		"website": "http://stats.lse.ac.uk/kardaras/",
-		"subjects": ["Mathematical Finance"],
-		"location": "London School of Economics",
-		"img_url": "assets/img/speakers/kostas_kardaras.png"
-	},
-	{
-		"name": "Jonthan Fraser",
-		"website": "http://personalpages.manchester.ac.uk/staff/jonathan.fraser/",
-		"subjects": ["Dynamical Systems"],
-		"location": "University of Manchester",
-		"img_url": "assets/img/speakers/jonathan_fraser.JPG"
-	},
-	{
-		"name": "Constantin Telemann",
-		"website": "http://www.all-souls.ox.ac.uk/people.php?personid=2241",
-		"subjects": ["Topology"],
-		"location": "University of Oxford",
-		"img_url": "assets/img/speakers/contantin_telemann.png"
-	},
-	{
-		"name": "Andrew Granville",
-		"website": "http://www.dms.umontreal.ca/~andrew/",
-		"subjects": ["Number Theory"],
-		"location": "",
-		"img_url": "assets/img/speakers/andrew_granville.png"
-	},
-	{
-		"name": "Kobi Kremnizer",
-		"website": "http://www.maths.ox.ac.uk/people/yakov.kremnitzer",
-		"subjects": ["Algebra"],
-		"location": "University of Oxford",
-		"img_url": "assets/img/speakers/kobi_kremnizer.png"
-	},
-	{
-		"name": "Ragni Piene",
-		"website": "http://www.mn.uio.no/math/english/people/aca/ragnip/",
-		"subjects": ["Geometry"],
-		"location": "University of Oslo",
-		"img_url": "assets/img/speakers/ragni_piene.png"
-	},
-	{
-		"name": "Daniela Kühn",
-		"website": "http://web.mat.bham.ac.uk/D.Kuehn/",
-		"subjects": ["Combinatorics and Graph Theory"],
-		"location": "University of Birmingham",
-		"img_url": "assets/img/speakers/daniela_kuhn.png"
-	},
-	{
-		"name": "Vicky Neale",
-		"website": "http://people.maths.ox.ac.uk/neale/Public.html",
-		"other": "LMS Public Lecture",
-		"location": "University of Oxford",
-		"img_url": "assets/img/speakers/neale.jpg"
-	},
-	{
-		"name": "Frances Kirwan",
-		"website": "http://www.maths.ox.ac.uk/people/frances.kirwan",
-		"other": "Plenary Speaker",
-		"location": "University of Oxford",
-		"img_url": "assets/img/speakers/frances_kirwan.png"
-	},
-	{
-		"name": "Cyrille Mathis",
-		"other": "Mathematics as a living language",
-		"location": "ThinkTank Maths Limited",
-		"website": "http://thinktankmaths.com",
-		"img_url": "assets/img/speakers/cyrille_mathis.jpg"
-	}
+    {
+        "name": "Constantin Telemann",
+        "website": "http://www.all-souls.ox.ac.uk/people.php?personid=2241",
+        "subjects": [
+            "Topology"
+        ],
+        "location": "University of Oxford",
+        "img_url": "assets/img/speakers/contantin_telemann.png"
+    },
+    {
+        "name": "Simon Tavaré",
+        "website": "http://www.damtp.cam.ac.uk/user/st321/CRUK_CI.html",
+        "subjects": [
+            "Statistics",
+            "Computational Biology"
+        ],
+        "location": "University of Cambridge",
+        "img_url": "assets/img/speakers/simon_tavare.png"
+    },
+    {
+        "name": "Frank Smith",
+        "website": "http://www.ucl.ac.uk/maths/frank-smith",
+        "subjects": [
+            "Fluid Mechanics"
+        ],
+        "location": "University College London (UCL)",
+        "img_url": "assets/img/speakers/frank_smith.png"
+    },
+    {
+        "name": "Carola-Bibiane Schoenlieb",
+        "website": "http://www.damtp.cam.ac.uk/people/c.b.schoenlieb/",
+        "subjects": [
+            "Numerical Analysis"
+        ],
+        "location": "University of Cambridge",
+        "img_url": "assets/img/speakers/carola-bibiane_schoenlieb.png"
+    },
+    {
+        "name": "Ragni Piene",
+        "website": "http://www.mn.uio.no/math/english/people/aca/ragnip/",
+        "subjects": [
+            "Geometry"
+        ],
+        "location": "University of Oslo",
+        "img_url": "assets/img/speakers/ragni_piene.png"
+    },
+    {
+        "name": "Barbara Niethammer",
+        "website": "http://www.hcm.uni-bonn.de/people/profile/barbara-niethammer/",
+        "subjects": [
+            "PDEs",
+            "Analysis"
+        ],
+        "location": "Universität Bonn",
+        "img_url": "assets/img/speakers/barbra_niethammer.png"
+    },
+    {
+        "name": "Cyrille Mathis",
+        "other": "Mathematics as a living language",
+        "location": "ThinkTank Maths Limited",
+        "website": "http://thinktankmaths.com",
+        "img_url": "assets/img/speakers/cyrille_mathis.jpg"
+    },
+    {
+        "name": "Daniela Kühn",
+        "website": "http://web.mat.bham.ac.uk/D.Kuehn/",
+        "subjects": [
+            "Combinatorics and Graph Theory"
+        ],
+        "location": "University of Birmingham",
+        "img_url": "assets/img/speakers/daniela_kuhn.png"
+    },
+    {
+        "name": "Kobi Kremnizer",
+        "website": "http://www.maths.ox.ac.uk/people/yakov.kremnitzer",
+        "subjects": [
+            "Algebra"
+        ],
+        "location": "University of Oxford",
+        "img_url": "assets/img/speakers/kobi_kremnizer.png"
+    },
+    {
+        "name": "Wilfrid Kendall",
+        "website": "http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/kendall/",
+        "subjects": [
+            "Probability and Stochastic Processes"
+        ],
+        "location": "Unversity of Warwick",
+        "img_url": "assets/img/speakers/wilfrid_kendall.png"
+    },
+    {
+        "name": "Kostas Kardaras",
+        "website": "http://stats.lse.ac.uk/kardaras/",
+        "subjects": [
+            "Mathematical Finance"
+        ],
+        "location": "London School of Economics",
+        "img_url": "assets/img/speakers/kostas_kardaras.png"
+    },
+    {
+        "name": "Martin Hyland",
+        "website": "https://www.dpmms.cam.ac.uk/~martin/",
+        "subjects": [
+            "Logic and Set Theory",
+            "Computer Science"
+        ],
+        "location": "University of Cambridge",
+        "img_url": "assets/img/speakers/martin_hyland.png"
+    },
+    {
+        "name": "Steffen Grunewalder",
+        "website": "http://www.lancaster.ac.uk/maths/about-us/people/steffen-grunewalder",
+        "subjects": [
+            "Machine Learning"
+        ],
+        "location": "Lancaster University",
+        "img_url": "assets/img/speakers/steffen_grunewalder.png"
+    },
+    {
+        "name": "Andrew Granville",
+        "website": "http://www.dms.umontreal.ca/~andrew/",
+        "subjects": [
+            "Number Theory"
+        ],
+        "location": "",
+        "img_url": "assets/img/speakers/andrew_granville.png"
+    },
+    {
+        "name": "Jonthan Fraser",
+        "website": "http://personalpages.manchester.ac.uk/staff/jonathan.fraser/",
+        "subjects": [
+            "Dynamical Systems"
+        ],
+        "location": "University of Manchester",
+        "img_url": "assets/img/speakers/jonathan_fraser.JPG"
+    },
+    {
+        "name": "Martine Ben Amar",
+        "website": "http://www.phys.ens.fr/~benamar/benamar_en.php",
+        "subjects": [
+            "Mathematical Biology",
+            "Mathematical Physics"
+        ],
+        "location": "École Normale Supérieure",
+        "img_url": "assets/img/speakers/martine_ben_amar.png"
+    },
+    {
+        "name": "Vicky Neale",
+        "website": "http://people.maths.ox.ac.uk/neale/Public.html",
+        "other": "LMS Public Lecture",
+        "location": "University of Oxford",
+        "img_url": "assets/img/speakers/neale.jpg"
+    },
+    {
+        "name": "Frances Kirwan",
+        "website": "http://www.maths.ox.ac.uk/people/frances.kirwan",
+        "other": "Plenary Speaker",
+        "location": "University of Oxford",
+        "img_url": "assets/img/speakers/frances_kirwan.png"
+    }
 ]
