@@ -1,6 +1,5 @@
 // Declare ALL vars in this file
 // Add subsequent files to Gruntfile AFTER this file
-"use strict";
 var YRM = YRM || {};
 YRM.controller = {};
 
@@ -40,6 +39,7 @@ YRM.controller.tasks = {
 	 * for various pages
 	 */
 	runner: function() {
+		"use strict";
 		var page = $('.container-common')[0]?$('.container-common')[0].id:undefined || $('.home')[0].id;
 
 		// Switch the id of the current container
@@ -71,6 +71,7 @@ YRM.controller.tasks = {
 	 * rendering function in the views.
 	 */
 	participants: function() {
+		"use strict";
 		$.getJSON(YRM.globs.apiRoot + 'getRegistrants.php', function(participants) {
 
 			// If there are no participants
@@ -81,7 +82,7 @@ YRM.controller.tasks = {
 			}
 			for (var i = participants.length - 1; i >= 0; i--) {
 				YRM.views.renderParticipants(participants[i]);
-			};
+			}
 		});
 	},
 
@@ -89,7 +90,7 @@ YRM.controller.tasks = {
 	 * Main task for the home screen
 	 */
 	home: function() {
-
+		"use strict";
 		// Starts the counters
 		$.getJSON(YRM.globs.apiRoot + 'getRegistrants.php', function(participants) {
 			var anCntrs = YRM.views.animateCounters;
@@ -108,12 +109,12 @@ YRM.controller.tasks = {
 			$('#participant-no').html('a lot');
 			YRM.views.animateCounters($('#speaker-no'), YRM.globs.speakerCount);
 			YRM.views.animateCounters($('#day-no'), YRM.globs.eventLength);
-		})
+		});
 
 	},
 
 	speakers: function(packet) {
-
+		"use strict";
 		// Check to see if a packet has been
 		// passed in to the func
 		packet = packet || {};
@@ -184,7 +185,7 @@ YRM.controller.tasks = {
 YRM.controller.router = {
 
 	trackInit: function() {
-
+		"use strict";
 		// Get the track name using the hash
 		var track = document.location.hash.replace("#", "");
 
@@ -200,7 +201,7 @@ YRM.controller.router = {
 			if(exceptionWords.indexOf(trackWords[i]) === -1) {
 				trackWords[i] = trackWords[i][0].toUpperCase() + trackWords[i].substr(1);
 			}
-		};
+		}
 
 		var trackWordsJoined = "?subject=" + trackWords.join("%20");
 
