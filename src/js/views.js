@@ -42,7 +42,7 @@ YRM.views = {
 			element.html(++num);
 			++counter;
 			if(counter !== length) {
-				setTimeout(function() { count() }, 40);
+				setTimeout(function() { count() }, 10);
 			}
 		})()
 	},
