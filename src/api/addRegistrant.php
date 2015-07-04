@@ -151,7 +151,7 @@
       }
     } else {
 
-      mail($_POST['payer_email'], "YRM2015 Ticket Confirmation", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nWe hope you will be able to give a short talk on your research. To do this, you will need to complete the form at http://goo.gl/forms/4SlGcxF6fN no later than Friday 3rd July. This form also enables you to enter our poster competition.\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail\r\nBcc: rob@calcroft.com");
+      mail($_POST['payer_email'], "YRM2015 Registration Confirmation and Abstract Submission", "Hi, $firstName\r\n\r\nThanks for buying a ticket to YRM2015!\r\n\r\nYour order ID is: $orderId\r\n\r\nRegards,\r\n\r\nThe YRM2015 Team", "From: YRM2015 <info@yrm2015.co.uk>\r\nReply-To: $replyToEmail\r\nBcc: rob@calcroft.com");
     }
 
   }
