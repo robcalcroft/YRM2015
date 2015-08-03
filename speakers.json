@@ -99,16 +99,6 @@
         "img_url": "assets/img/speakers/kostas_kardaras.png"
     },
     {
-        "name": "Martin Hyland",
-        "website": "https://www.dpmms.cam.ac.uk/~martin/",
-        "subjects": [
-            "Logic and Set Theory",
-            "Computer Science"
-        ],
-        "location": "University of Cambridge",
-        "img_url": "assets/img/speakers/martin_hyland.png"
-    },
-    {
         "name": "Steffen Grunewalder",
         "website": "http://www.lancaster.ac.uk/maths/about-us/people/steffen-grunewalder",
         "subjects": [
